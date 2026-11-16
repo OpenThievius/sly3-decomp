@@ -1,30 +1,45 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 
-s32 func_00117F48(s32, s32);
-s32 func_00118308(s32, s32);
-s32 func_00118A90(s32, s32);
-s32 func_00118CD8();
-s32 func_001192D8(s32, s32);
-s32 func_00119A90(s32, s32);
-s32 func_00119FA0(s32, s32);
-s32 func_0011A120(s32, s32);
-s32 func_0011A778(s32, s32);
-s32 func_0011A958(s32, s32);
-s32 func_0011AAB0(s32, s32);
-s32 func_0011AC08(s32, s32);
-s32 func_0011B138(s32, s32);
-s32 func_0011BBF0(s32, s32);
-s32 func_0011BDF8(s32, s32);
+extern void func_0011AF60(void*, void*);
+extern void func_0011AF90(void*, void*);
 
+struct Link_0011AFC0 { void* first; u32 pad4; s32 offset; };
+
+void func_0011AFC0(Link_0011AFC0* self, void* target, void* replacement)
+{
+    if (target == 0)
+    {
+        func_0011AF60(self, replacement);
+    }
+    else if (target == self->first)
+    {
+        func_0011AF90(self, replacement);
+    }
+    else
+    {
+        s32 offset = self->offset;
+        u8* destination = (u8*)replacement + offset;
+        u8* source = (u8*)target + offset;
+        u32 value = *(u32*)(source + 4);
+        *(void**)destination = target;
+        *(u32*)(destination + 4) = value;
+        *(u32*)(source + 4) = (u32)replacement;
+        *(void**)(value + offset) = replacement;
+    }
+}
+
+s32 func_00117F48(s32, s32);
 void func_001180B8(void) {
     func_00117F48(1, 0xFFFF);
 }
 
+s32 func_00118308(s32, s32);
 void func_00118440(void) {
     func_00118308(1, 0xFFFF);
 }
 
+s32 func_00118A90(s32, s32);
 void func_00118BC8(void) {
     func_00118A90(1, 0xFFFF);
 }
@@ -39,6 +54,7 @@ void func_00118C30(void* p)
 	*(int*)((char*)p + 0x1C) = 0;
 }
 
+s32 func_00118CD8();
 void func_00118DA0(void) {
     func_00118CD8();
 }
@@ -50,6 +66,7 @@ void func_00118E10(void* self, s32 a, s32 b)
     *(s32*)((char*)self + 0x24) = b;
 }
 
+s32 func_001192D8(s32, s32);
 void func_001192F8(s32 a, s32 b)
 {
     func_001192D8(a, b);
@@ -64,30 +81,37 @@ void func_00119A68(void* p)
     *(s32*)((char*)p + 0x34) = 0;
 }
 
+s32 func_00119A90(s32, s32);
 void func_00119BC8(void) {
     func_00119A90(1, 0xFFFF);
 }
 
+s32 func_00119FA0(s32, s32);
 void func_0011A0D8(void) {
     func_00119FA0(1, 0xFFFF);
 }
 
+s32 func_0011A120(s32, s32);
 void func_0011A258(void) {
     func_0011A120(1, 0xFFFF);
 }
 
+s32 func_0011A778(s32, s32);
 void func_0011A8B0(void) {
     func_0011A778(1, 0xFFFF);
 }
 
+s32 func_0011A958(s32, s32);
 void func_0011AA90(void) {
     func_0011A958(1, 0xFFFF);
 }
 
+s32 func_0011AAB0(s32, s32);
 void func_0011ABE8(void) {
     func_0011AAB0(1, 0xFFFF);
 }
 
+s32 func_0011AC08(s32, s32);
 void func_0011AD40(void) {
     func_0011AC08(1, 0xFFFF);
 }
@@ -114,14 +138,17 @@ s32 func_0011B0F0(s32 *arg0) {
     return *arg0 == 0;
 }
 
+s32 func_0011B138(s32, s32);
 void func_0011B270(void) {
     func_0011B138(1, 0xFFFF);
 }
 
+s32 func_0011BBF0(s32, s32);
 void func_0011BD28(void) {
     func_0011BBF0(1, 0xFFFF);
 }
 
+s32 func_0011BDF8(s32, s32);
 void func_0011BF30(void) {
     func_0011BDF8(1, 0xFFFF);
 }

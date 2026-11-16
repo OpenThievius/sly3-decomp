@@ -1,26 +1,34 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 
-s32 func_0011BFB8(s32, s32);
-s32 func_0011C110(s32, s32);
-extern s32 D_0036B124;
-s32 func_0011C2E0(void *, s32);
-s32 func_0011C560(s32, s32);
-s32 func_0011D968(s32, s32, s32, s32);
-s32 func_0011DD48(s32, s32, s32, s32);
-s32 func_0011DFA8(s32, s32);
-s32 func_0011E260(s32, s32);
-s32 func_00292F20();
-s32 func_0011FC10(s32, s32);
+struct Quad_0011D830 { u32 words[4]; } __attribute__((aligned(16)));
+struct Block_0011D830 { Quad_0011D830 quad[4]; } __attribute__((aligned(16)));
+extern void func_0011D768(void*, void*);
+extern void func_0011D558(void*, void*, void*);
 
+void func_0011D830(void* source, void* key, Block_0011D830* output)
+{
+    Block_0011D830 result;
+    Block_0011D830 workspace;
+    func_0011D768(&workspace, source);
+    func_0011D558(&result, key, &workspace);
+    output->quad[0] = result.quad[0];
+    output->quad[1] = result.quad[1];
+    output->quad[2] = result.quad[2];
+    output->quad[3] = result.quad[3];
+}
+
+s32 func_0011BFB8(s32, s32);
 void func_0011C0F0(void) {
     func_0011BFB8(1, 0xFFFF);
 }
 
+s32 func_0011C110(s32, s32);
 void func_0011C248(void) {
     func_0011C110(1, 0xFFFF);
 }
 
+extern s32 D_0036B124;
 void func_0011C2B8(s32 arg0) {
     if (arg0 == -1) {
         D_0036B124 = 0;
@@ -29,6 +37,7 @@ void func_0011C2B8(s32 arg0) {
     D_0036B124 = arg0;
 }
 
+s32 func_0011C2E0(void *, s32);
 s32 func_0011C330(void)
 {
     void *args[1];
@@ -36,14 +45,17 @@ s32 func_0011C330(void)
     return *(s32 *)args;
 }
 
+s32 func_0011C560(s32, s32);
 void func_0011C698(void) {
     func_0011C560(1, 0xFFFF);
 }
 
+s32 func_0011D968(s32, s32, s32, s32);
 void func_0011C6D0(s32 arg0, s32 arg1) {
     func_0011D968(4, 3, arg0, arg1);
 }
 
+s32 func_0011DD48(s32, s32, s32, s32);
 s32 func_0011D628(s32 arg0, s32 arg1) {
     func_0011DD48(4, 4, arg1, arg0);
     return arg0;
@@ -53,6 +65,7 @@ void func_0011D740(s32 arg0, s32 arg1) {
     func_0011D968(4, 4, arg0, arg1);
 }
 
+s32 func_0011DFA8(s32, s32);
 void func_0011E0E0(void) {
     func_0011DFA8(1, 0xFFFF);
 }
@@ -81,10 +94,12 @@ void func_0011E210(void* p)
     *(int*)((char*)p + 0xC) = 0;
 }
 
+s32 func_0011E260(s32, s32);
 void func_0011E398(void) {
     func_0011E260(1, 0xFFFF);
 }
 
+s32 func_00292F20();
 s32 func_0011E8B8(void) {
     return func_00292F20() % 905010707;
 }
@@ -99,6 +114,7 @@ s32 func_0011E9C8(f32 fparg0, f32 fparg1, f32 fparg2) {
     return var_v0;
 }
 
+s32 func_0011FC10(s32, s32);
 void func_0011FD48(void) {
     func_0011FC10(1, 0xFFFF);
 }
