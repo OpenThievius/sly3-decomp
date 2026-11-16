@@ -32,3 +32,8 @@ sly1-decomp: written by its maintainers, used here under the AGPL-3.0-or-later.
 The Python packages in `tools/requirements.txt` (splat64, spimdisasm, rabbitizer, PyYAML) are
 installed by each contributor and are not distributed with the repository. The compiler is
 proprietary and never part of it ([docs/TOOLCHAIN.md](docs/TOOLCHAIN.md)).
+
+Contributors may draft C locally with [m2c](https://github.com/matt-kempster/m2c) (GPL-3.0) and
+[ps2-decomp-assist](https://github.com/Blightwidow/ps2-decomp-assist) (Apache-2.0), run on the
+retail executable of their own disc. Neither is distributed with the repository and none of their
+code is in it; what lands is C that rebuilds retail's bytes, checked by `tools/build.py`.
