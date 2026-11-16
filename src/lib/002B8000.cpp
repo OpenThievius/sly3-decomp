@@ -14,6 +14,14 @@ s32 func_002BBCC0();
 extern s32 D_00351258;
 extern s32 D_00351238;
 extern s32 D_003532D0;
+s32 func_00118DA0(s32, s32, s32);
+s32 func_001D2818(s32);
+
+void func_002B8750(int* p)
+{
+    p[0] = 0;
+    p[1] = 0;
+}
 
 s32 func_002B8840(s32 arg0) {
     return arg0;
@@ -32,8 +40,32 @@ s32 func_002BA008(s32 arg0) {
     return arg0;
 }
 
+void func_002BA1F8(s32 arg0, s32 arg1, s32 arg2) {
+    func_00118DA0(arg2, 4, arg1);
+}
+
 void func_002BA3E8(s32 arg0) {
     func_002BA318(arg0 + 0x14);
+}
+
+void func_002BA690(s32 arg0, s32 arg1) {
+    if (arg1 & 1) {
+        func_001D2818(arg0);
+    }
+}
+
+void func_002BAB68(s32 **arg0, s32 *arg1) {
+    if (arg1 != 0) {
+        *arg1 += 1;
+    }
+    *arg0 = arg1;
+}
+
+void func_002BAB88(s32 **arg0, s32 *arg1) {
+    if (arg1 != 0) {
+        *arg1 += 1;
+    }
+    *arg0 = arg1;
 }
 
 void func_002BACE0(s32 arg0, s32 arg1) {
@@ -43,6 +75,13 @@ void func_002BACE0(s32 arg0, s32 arg1) {
     if (arg1 & 1) {
         func_0011E1F0(&D_004D2BB0, arg0);
     }
+}
+
+void func_002BAEB0(s32 **arg0, s32 *arg1) {
+    if (arg1 != 0) {
+        *arg1 += 1;
+    }
+    *arg0 = arg1;
 }
 
 void func_002BAF38(void) {
@@ -67,6 +106,12 @@ void func_002BAF58(void) {
 
 void func_002BAF60(void) {
 
+}
+
+void func_002BB770(s32 arg0, s32 arg1) {
+    if (arg1 & 1) {
+        func_001D2818(arg0);
+    }
 }
 
 void func_002BB798(s32 arg0, s32 arg1) {

@@ -20,6 +20,20 @@ extern s32 D_00479AD8;
 s32 func_0011B028(s32 *, s32);
 s32 func_001C85C0();
 s32 func_0026FA78(s32, s32);
+s32 func_00137628(s32);
+s32 func_001F3C80();
+s32 func_0023E068();
+s32 func_0026CBE8(s32, s32);
+
+void func_0026C040(s32 arg0)
+{
+    func_001F3C80();
+    func_00137628(arg0 + 0x2BC);
+    func_00137628(arg0 + 0x2B8);
+    func_00137628(arg0 + 0x2B4);
+    func_00137628(arg0 + 0x2B0);
+    *(s32*)(arg0 + 0x278) = 0;
+}
 
 void func_0026C8F8(s32 arg0) {
     func_001F4548();
@@ -33,6 +47,19 @@ void func_0026C8F8(s32 arg0) {
 void func_0026C948(s32 arg0, s32 arg1) {
     func_0026DE78(func_00169BF8(0x24), arg1, 9, arg0);
 }
+
+void func_0026CC38(char *arg0) {
+    s32 temp_v0;
+
+    func_0023E068();
+    s32 a1 = *(s32 *)(arg0 + 0x1D0);
+    if (a1 != 0) {
+        temp_v0 = func_0026CBE8(*(s32 *)(*(char **)(arg0 + 0xDC) + 0x64), a1);
+        *(s32 *)(arg0 + 0x1BC) = temp_v0;
+    }
+}
+
+void func_0026CD28(void* self, s32 value) { *((s32*)((char*)self + 0x278)) = value; }
 
 void func_0026DF38(s32 *arg0) {
     func_00169E40();

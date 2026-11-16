@@ -12,6 +12,11 @@ extern s32 D_00474FAC;
 s32 func_00235EC8();
 extern s32 D_00479D98;
 s32 func_00236D58(s32, s32);
+s32 func_001D2898(s32, s32, s32);
+
+void func_00235D50(s32 *arg0) {
+    func_001D2898(arg0[2], arg0[1], arg0[0]);
+}
 
 void func_00235DE0(void) {
     D_0046FF38 = 0;
@@ -48,4 +53,16 @@ void func_00237150(void) {
 
 f32 func_00237158(void) {
     return 0.0f;
+}
+
+s32 func_00237348(void* a0, void* a1)
+{
+    s32 v = *(s32*)((char*)a1 + 0x0);
+    return (v ^ *(s32*)((char*)a0 + 0x14)) == 0;
+}
+
+void func_00237DD8(void* self, f32 first, f32 second)
+{
+    *(f32*)((char*)self + 0x60) = first;
+    *(f32*)((char*)self + 0x64) = second;
 }

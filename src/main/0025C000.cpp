@@ -11,6 +11,20 @@ s32 func_00271730(s32, s32);
 extern s32 D_0046F788;
 extern s32 D_00475480;
 
+s32 func_0025D5A8(char* self)
+{
+	s32 count = *(s32*)(self + 0x3F04);
+	*(s32*)(self + 0x3F04) = count + 1;
+	return *(s32*)(self + 0x3F00) + count * 12;
+}
+
+s32 func_0025D5C8(char* self)
+{
+	s32 count = *(s32*)(self + 0x3F0C);
+	*(s32*)(self + 0x3F0C) = count + 1;
+	return *(s32*)(self + 0x3F08) + count * 12;
+}
+
 s32 func_0025E7A8(void) {
     return 0;
 }

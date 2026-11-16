@@ -30,6 +30,17 @@ void func_00278D30(s32 arg0) {
     func_00278E58(arg0, -1);
 }
 
+void func_00279160(char* self, s32 value)
+{
+    u32 count = *(u32*)(self + 0x54);
+    if (count < 0x20) {
+        *(u32*)(self + 0x54) = count + 1;
+        u32* p = (u32*)(self + ((count * 8) + 0x58));
+        p[0] = value;
+        p[1] = 0;
+    }
+}
+
 void func_002797C0(s32 arg0) {
     func_001FC968();
     func_00279998(arg0);

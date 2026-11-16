@@ -9,9 +9,21 @@ extern s32 D_004CF754;
 s32 func_00293B00();
 s32 func_00293B10();
 s32 func_0029A028();
+s32 func_00293AD0(s32, void *, s32);
+extern s32 D_004CF900;
 
 void func_00299648(void) {
     D_0034B678 = 0;
+}
+
+s32 func_002996C0(s32 arg0, void *arg1, s32 arg2)
+{
+    s32 temp_a1 = arg0;
+    return func_00293AD0(0x10, &temp_a1, arg2);
+}
+
+s32 func_00299748(s32 idx) {
+    return *(s32*)(idx * 4 + (s32)&D_004CF900);
 }
 
 void func_002999F0(void) {

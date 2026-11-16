@@ -20,3 +20,5 @@ s32 func_002058D8(s32 arg0) {
     }
     return var_v0;
 }
+
+void func_00207598(char *self, s32 value) { u32 count = *(u32 *)(self + 0x3AC); if (count < 4) { *(s32 *)(self + (count << 2) + 0x3B0) = value; *(u32 *)(self + 0x3AC) = count + 1; } }

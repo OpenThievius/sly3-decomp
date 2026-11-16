@@ -4,6 +4,11 @@
 s32 func_001DC530(s32, s32);
 s32 func_001DC8D8(s32, s32);
 
+s32 func_001DC520(void* p)
+{
+    return *(s32*)((char*)p + 0x114) != 0;
+}
+
 void func_001DC6A0(void) {
     func_001DC530(1, 0xFFFF);
 }

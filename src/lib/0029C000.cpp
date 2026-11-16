@@ -22,6 +22,16 @@ s32 func_0029D0F8(void) {
     return D_0034BCDC() + 4;
 }
 
+s16 func_0029D3F8(const char* s)
+{
+    return *(s16*)(s + 6);
+}
+
+s16 func_0029D400(const char* self)
+{
+    return *(s16*)(self + 4);
+}
+
 void func_0029D7C0(void) {
 
 }
@@ -82,3 +92,5 @@ s32 *func_0029F148(void) {
 void func_0029F940(void) {
     func_002939C0();
 }
+
+u32 func_0029F9D8(u32 x) { if ((x >> 28) == 7) { x &= 0xFFFFFFF; x |= 0x80000000; } return x; }

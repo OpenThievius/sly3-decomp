@@ -13,9 +13,42 @@ s32 func_0011E118(s32 *);
 extern s32 D_00479CB0;
 s32 func_0011E1F0(s32 *, s32);
 extern s32 D_00479CC8;
+s32 func_0013B500(void *, s32);
+s32 func_001F43C8(s32);
+s32 func_001F43D0(s32, s32);
+s32 func_001F48F8();
+s32 func_00208378(s32);
+s32 func_001C7A00(s32, s32, s32);
+s32 func_00209428(void *);
+
+void func_00208030(void *self, void *other)
+{
+    s32 temp_v0;
+
+    func_001F48F8();
+    if (func_0013B500(other, 0x69) != 0) {
+        temp_v0 = func_001F43C8((s32)self);
+        func_001F43D0((s32)self, temp_v0 + *(s32 *)((char *)other + 0x1AC));
+    }
+}
 
 void func_002081C8(void) {
     func_00208090(1, 0xFFFF);
+}
+
+void func_002081E8(char* self) { *(int*)(self + 0xA4) = -1; *(int*)(self + 0x90) = -1; }
+
+void func_00208A80(s32 arg0, s32 arg1) {
+    func_00208378(arg1);
+}
+
+void func_002093E8(void *arg0)
+{
+    void *target = *(void **)((char *)arg0 + 0xA0);
+    if (target != 0) {
+        func_001C7A00((s32)target, 0, 0xF);
+        func_00209428(arg0);
+    }
 }
 
 void func_00209778(void) {

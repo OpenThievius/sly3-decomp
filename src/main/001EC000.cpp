@@ -27,6 +27,15 @@ void func_001ED1D0(s32 arg0) {
     func_001EBCD0(arg0 + 0xD0);
 }
 
+f32 func_001EF588(char* self) { return *(f32*)(self + ((*(int*)(self + 0x30) - 1) << 2) + 0x240); }
+
+s32 func_001EF5A0(void* p)
+{
+    s32 v = *(s32*)((char*)p + 0x288) + 1;
+    *(s32*)((char*)p + 0x288) = v;
+    return v;
+}
+
 void func_001EF818(void) {
     func_001EF6E0(1, 0xFFFF);
 }

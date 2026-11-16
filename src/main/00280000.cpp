@@ -23,6 +23,19 @@ void func_00280208(s32 arg0, s32 arg1, s32 arg2) {
     func_001858D0(&D_0036C700, arg0 + 0x118, 4, arg0 + 0x114, arg1, arg2);
 }
 
+void func_00280240(void* p, s32 a, s32 b)
+{
+    u32 n = *(u32*)((char*)p + 0x138);
+    if (n < 4U) {
+        *(u32*)((char*)p + 0x138) = n + 1;
+        u32* p32 = (u32*)((char*)p + ((n * 8) + 0x13C));
+        p32[0] = a;
+        p32[1] = b;
+    }
+}
+
+void func_00280270(char *self, s32 value) { u32 count = *(u32 *)(self + 0x15C); if (count < 4) { *(u32 *)(self + (count << 2) + 0x160) = value; *(u32 *)(self + 0x15C) = count + 1; } }
+
 void func_00280410(void) {
     func_002802D8(1, 0xFFFF);
 }
@@ -47,10 +60,36 @@ void func_00281868(void) {
     func_00240850();
 }
 
+void func_00281928(void* self, s32 value)
+{
+    *(s32*)((char*)self + 0x164) = value;
+}
+
 void func_00281AB0(void) {
     func_00281978(1, 0xFFFF);
 }
 
+void func_00282F68(void* self, s32 value, f32 x)
+{
+    *(s32*)((char*)self + 0x1A4) = value;
+    *(f32*)((char*)self + 0x1A8) = x;
+}
+
 void func_002830B0(void) {
     func_00282F78(1, 0xFFFF);
+}
+
+void func_002834D8(void* out, f32 x)
+{
+    f32 one = 1.0f;
+    *(f32*)((char*)out + 0x84) = 0.0f;
+    *(f32*)((char*)out + 0x9C) = x;
+    *(f32*)((char*)out + 0x78) = one;
+    *(f32*)((char*)out + 0x7C) = -1.0f / x;
+}
+
+void func_00283790(void* p)
+{
+    *(int*)((char*)p + 0x14) = 0;
+    *(int*)((char*)p + 0x18) = 0;
 }

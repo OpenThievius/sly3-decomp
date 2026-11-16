@@ -17,6 +17,19 @@ s32 func_00152448();
 s32 func_001C8970(s32, s32, s32 *, s32);
 extern s32 D_00346650;
 s32 func_001EB370(s32, s32);
+s32 func_00169BF8(s32);
+s32 func_00169C90(s32, s32, s32);
+s32 func_00152488();
+s32 func_00155190(void *, s32);
+s32 func_0023DDA0(void *, s32, s32);
+s32 func_00258958(s32);
+s32 func_00155CE0();
+s32 func_001EA4B0(s32, s32);
+s32 func_001EA940(s32);
+s32 func_001C3D18(void *, s32, s32);
+s32 func_0024E400();
+s32 func_00261528(s32, s32, f32, f32);
+s32 func_00261580(s32, s32, f32);
 
 void func_001E8418(void) {
     func_001E82E0(1, 0xFFFF);
@@ -55,6 +68,10 @@ void func_001E8D50(s32 arg0) {
     func_001E8E60(arg0, -1);
 }
 
+void func_001E8E08(s32 arg0, s32 arg1) {
+    func_00169C90(func_00169BF8(0x20), arg1, 1);
+}
+
 void func_001E9310(void) {
     func_001E91D8(1, 0xFFFF);
 }
@@ -62,6 +79,65 @@ void func_001E9310(void) {
 void func_001E9438(s32 arg0) {
     func_00152448();
     func_001C8970(arg0, 0x31, &D_00346650, 0);
+}
+
+void func_001E9478(char *self)
+{
+    func_00152488();
+    func_00258958((s32)(self + 0x1480));
+    func_00258958((s32)(self + 0x1530));
+    func_00258958((s32)(self + 0x15E0));
+    func_00155190(self, 0x2E);
+    *(s32 *)(self + 0x1190) = func_0023DDA0(self, 0x22, 1);
+}
+
+s32 func_001EA060(void* p)
+{
+	return *(s32*)((char*)p + 0x1470) == 1;
+}
+
+void func_001EA178(s32 arg0) {
+    func_00155CE0();
+    s32 r = func_001EA940(arg0);
+    func_001EA4B0(arg0, r != 0 ? 2 : -1);
+}
+
+s32 func_001EA1B8(char* self)
+{
+    s32 value = *(s32*)(self + 0x1470);
+    if (value < 4) {
+        if (value >= 0) return 1;
+    }
+    return 0;
+}
+
+void func_001EA398(char *self, s32 b, s32 c)
+{
+    func_0024E400();
+    if (*(s32 *)(self + 0x1470) == 6) {
+        func_001C3D18(self + 0xE40, b, c);
+    }
+}
+
+void func_001EA9A8(void* self)
+{
+    *(int*)((char*)self + 0x16EC) = 1;
+}
+
+void func_001EB300(char* self)
+{
+    s32 a = *(s32*)(self + 0x16f8);
+    if (a != 0) {
+        func_00261528(a, 0x3CA, (f32) *(s32*)(self + 0x16e4), (f32) *(s32*)(self + 0x16e8));
+    }
+}
+
+void func_001EB340(char* self)
+{
+    s32 v = *(s32*)(self + 0x16FC);
+    if (v != 0) {
+        func_00261580(v, 0x37C, *(f32*)(self + 0x1700));
+    }
 }
 
 void func_001EB4A8(void) {

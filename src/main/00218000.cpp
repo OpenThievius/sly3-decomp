@@ -11,6 +11,12 @@ void func_00219460(s32 arg0) {
     func_002194B0(arg0);
 }
 
+void func_00219490(char* self) {
+    *(int*)(self + 0x460) = -1;
+    *(float*)(self + 0x464) = -1.0f;
+    *(int*)(self + 0x45c) = -1;
+}
+
 void func_00219738(s32 arg0) {
     func_001FCAC8();
     func_0021A418(arg0);
