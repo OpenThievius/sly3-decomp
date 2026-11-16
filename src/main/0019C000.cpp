@@ -15,6 +15,17 @@ s32 func_0011B028(s32);
 s32 func_0019FF00(s32, s32);
 s32 func_002614B0();
 
+void func_0019C998(char* self, s32 a, s32 b)
+{
+    u32 n = *(u32*)(self + 0x28C);
+    if (n < 4) {
+        *(u32*)(self + 0x28C) = n + 1;
+        u32* p = (u32*)(self + (n * 0x18 + 0x290));
+        p[0] = a;
+        p[1] = b;
+    }
+}
+
 void func_0019CF10(s32 arg0) {
     func_001F3C80();
     func_0019DC10(arg0, -1);

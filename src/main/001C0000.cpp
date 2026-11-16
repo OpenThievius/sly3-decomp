@@ -24,12 +24,27 @@ void func_001C0370(s32 *arg0, s32 arg1) {
     func_0011AF60(&D_00479BC8, arg0);
 }
 
+void func_001C12B0(void* self)
+{
+    *(int*)((char*)self + 4) = 0;
+}
+
 void func_001C13F0(void) {
     func_001C12B8(1, 0xFFFF);
 }
 
 void func_001C1FF8(void) {
     func_001C1EC0(1, 0xFFFF);
+}
+
+s32 func_001C21D0(void* self, s32 index)
+{
+    return (*(s32*)((char*)self + (index << 4) + 0x2C));
+}
+
+s32 func_001C21E0(s32 base, s32 index)
+{
+    return *(s32 *)(base + ((index << 4) + 0x34));
 }
 
 void func_001C2FE8(s32 *arg0) {

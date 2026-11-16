@@ -14,6 +14,17 @@ s32 func_0023CC40();
 s32 func_001473A0(s32, s32, s32, s32);
 s32 func_00169BF8(s32);
 
+void func_001407A8(void* self, s32 value)
+{
+    *(s32*)((char*)self + 0x10) = value;
+    *(s32*)((char*)self + 0x14) = -1;
+}
+
+void func_00140BE8(void* unused, void* a1)
+{
+    *(int*)((char*)a1 + 0x94) = 0;
+}
+
 void func_00141038(void) {
     func_00140F00(1, 0xFFFF);
 }

@@ -16,6 +16,19 @@ s32 func_0016FCF8(s32);
 s32 func_001C8168();
 s32 func_00170328(s32);
 s32 func_001FCAC8();
+s32 func_0016CB38(void *, s32);
+s32 func_00252E40(s32, s32);
+s32 func_00238980();
+s32 func_00240DB0(s32);
+s32 func_00252FC0(s32, s32);
+s32 func_002BC760(void *, s32);
+s32 func_00238AD8();
+s32 func_00131568();
+s32 func_0016D840(void *, s32);
+s32 func_001854C8(s32 *, s32, s32);
+extern s32 D_0036C700;
+s32 func_001C9118(void *, s32);
+s32 func_0028FD70();
 
 void func_0016C6A8(s32 *arg0) {
     func_00169E40();
@@ -24,6 +37,64 @@ void func_0016C6A8(s32 *arg0) {
 
 void func_0016C930(void) {
     func_0016C7F8(1, 0xFFFF);
+}
+
+void func_0016C980(char *self)
+{
+    func_00238978();
+    func_00252E40(*(s32 *)(self + 0x10), *(s32 *)(self + 0x40));
+    func_0016CB38(self, 0);
+}
+
+void func_0016C9C0(char *self)
+{
+    func_00238980();
+    func_0016CB38(self, -1);
+    func_00252FC0(*(s32 *)(self + 0x10), *(s32 *)(self + 0x40));
+    func_002BC760(self + 0x30, 0);
+    func_00240DB0(*(s32 *)(self + 0x10));
+}
+
+s32 func_0016D320(s32 arg0, s32 arg1)
+{
+    if (arg1 == 0x12) {
+        return 1;
+    }
+    return func_00238AD8();
+}
+
+void func_0016D350(char* self)
+{
+    func_00131568();
+    *(s32*)(self + 0x3C) = 0x23;
+    *(s32*)(self + 0x50) = -1;
+}
+
+void func_0016D710(char *self) {
+    func_00238980();
+    func_0016D840(self, -1);
+    func_001854C8(&D_0036C700, 0x19, *(s32 *)(self + 0x10));
+    func_00252FC0(*(s32 *)(self + 0x10), 0x29);
+}
+
+s32 func_0016D940(void* p)
+{
+	s32 v = *(s32*)((char*)p + 0x30);
+	return v == 2;
+}
+
+void func_0016D950(s32* self)
+{
+    func_00131568();
+    self[0x3C / 4] = 0x2A;
+    self[0x50 / 4] = -1;
+}
+
+s32 func_0016E588(char* self)
+{
+    s32 v = *(s32*)(self + 0x50);
+    if (v == 3) return 7;
+    return 1;
 }
 
 void func_0016E5D8(s32 arg0) {
@@ -49,6 +120,17 @@ void func_0016F9E8(void) {
 
 void func_0016FC20(void) {
     func_0016FAE8(1, 0xFFFF);
+}
+
+void func_0016FC40(char *self) {
+    s32 flags = func_0028FD70();
+    func_001C9118(self, 1);
+    s32 value = *(s32 *)(self + 0x3C);
+    if ((value ^ 1) & 1) {
+        *(s32 *)value = *(s32 *)value | 2;
+        return;
+    }
+    *(s32 *)(self + 0x3C) = value | 2;
 }
 
 void func_0016FC98(s32 arg0) {

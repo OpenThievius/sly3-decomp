@@ -14,6 +14,15 @@ s32 func_0018B500(s32, s32);
 s32 func_0018B828(s32);
 s32 func_0018BEE8(s32);
 s32 func_002389A0();
+extern f32 D_0036BB98;
+extern s32 D_0036DB9C;
+extern s32 D_0036DBA0;
+
+s32 func_001880F0(void* self)
+{
+    if (*(s32*)((char*)self + 0x40) != 0) return 0;
+    return *(s32*)((char*)self + 0xFC) != 3;
+}
 
 void func_00188620(s32 arg0) {
     if (func_00188A20() != 0) {
@@ -36,6 +45,40 @@ s32 func_001890E8(s32 arg0) {
 
 void func_00189140(s32 arg0) {
     func_0011AF40(arg0 + 8);
+}
+
+void func_00189160(s32* p, s32 v)
+{
+    if (*p != v) {
+        *p = v;
+        *(f32*)(p + 1) = D_0036BB98;
+    }
+}
+
+void func_00189E60(void* self, s32 a1, s32 a2)
+{
+    *(s32*)((char*)self + 0xB0) = a1;
+    *(s32*)((char*)self + 0xB4) = a2;
+}
+
+void func_0018AAB8(char* self, char* pxf)
+{
+    if (pxf != 0) {
+        D_0036DB9C = *(s32*)(pxf + 0x18);
+    } else {
+        D_0036DB9C = -1;
+    }
+    *(char**)(self + 0x4048) = pxf;
+}
+
+void func_0018AAE0(char* self, char* node)
+{
+    if (node != 0) {
+        D_0036DBA0 = *(s32*)(node + 0x18);
+    } else {
+        D_0036DBA0 = -1;
+    }
+    *(char**)(self + 0x404C) = node;
 }
 
 void func_0018AD90(void) {

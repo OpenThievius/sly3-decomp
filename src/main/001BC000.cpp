@@ -4,9 +4,18 @@
 s32 func_001BD8D8(s32, s32);
 s32 func_001BE568(s32);
 s32 func_001BECD0(s32, s32);
+s32 func_001BE4F8(void *, void *);
 
 void func_001BDA10(void) {
     func_001BD8D8(1, 0xFFFF);
+}
+
+s32 func_001BDA30(void *self, s32 value)
+{
+    *(s32 *)((char *)self + 0x00) = value;
+    *(s32 *)((char *)self + 0x04) = -1;
+    *(s32 *)((char *)self + 0x18) = -1;
+    return func_001BE4F8((char *)self + 0x1C, self);
 }
 
 void func_001BDA68(s32 arg0) {

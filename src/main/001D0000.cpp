@@ -20,6 +20,7 @@ extern s32 D_00388C48;
 s32 func_001D26D0();
 s32 func_001D2720();
 s32 func_001D2818(s32);
+extern f32 D_0036BBD8;
 
 s32 func_001D0630(void) {
     func_0021C0F0(&D_004793C8);
@@ -42,12 +43,29 @@ void func_001D0BB0(void) {
     func_0021EB88();
 }
 
+void func_001D0D10(void* p, s32 value)
+{
+    if (value != *(s32*)((char*)p + 0x38)) {
+        *(s32*)((char*)p + 0x38) = value;
+        *(f32*)((char*)p + 0x3C) = D_0036BBD8;
+    }
+}
+
 void func_001D1A70(s32 arg0) {
     func_00271730(arg0, func_00150630(&D_00475480, D_00375220));
 }
 
 void func_001D1B98(s32 arg0) {
     func_00271730(arg0, func_00150630(&D_00475480, func_001D45B0(&D_0046F550)));
+}
+
+void func_001D2208(void* self, s32 value)
+{
+    s32 old = *(s32*)((char*)self + 0x38);
+    if (value != old) {
+        *(s32*)((char*)self + 0x38) = value;
+        *(f32*)((char*)self + 0x3C) = D_0036BBD8;
+    }
 }
 
 void func_001D23A0(void) {

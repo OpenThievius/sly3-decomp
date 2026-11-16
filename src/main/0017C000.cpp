@@ -12,6 +12,9 @@ s32 func_0017E608(s32, s32);
 s32 func_0017F828(s32, s32);
 s32 func_0017FE90(s32, s32);
 s32 func_00238978();
+s32 func_001C7340();
+s32 func_001C9118(void *, s32);
+s32 func_001C7938();
 
 void func_0017C9B0(void) {
 
@@ -31,6 +34,23 @@ void func_0017C9F8(void) {
 
 void func_0017D160(void) {
     func_0017D028(1, 0xFFFF);
+}
+
+void func_0017D180(char *self)
+{
+    s32 flags = func_001C7340();
+    func_001C9118(self, 1);
+    s32 f = *(s32 *)(self + 0x3C);
+    if ((f ^ 1) & 1) {
+        *(s32 *)f = *(s32 *)f | 0xA;
+        return;
+    }
+    *(s32 *)(self + 0x3C) = f | 0xA;
+}
+
+void func_0017D248(char *self) {
+    func_001C7938();
+    *(s32 *)(self + 0x60) = 0;
 }
 
 void func_0017D840(s32 arg0, s32 arg1) {

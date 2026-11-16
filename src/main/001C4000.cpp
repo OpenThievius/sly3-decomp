@@ -25,6 +25,8 @@ s32 func_001C71E8(s32, s32);
 s32 func_001519C8();
 s32 **func_001C7ED8();
 extern s32 func_001C7E88;
+void **func_0011E118(s32 *);
+extern s32 D_0047904C;
 
 void func_001C4850(void) {
     func_001C4718(1, 0xFFFF);
@@ -50,6 +52,11 @@ void func_001C4F68(s32 *arg0) {
 
 void func_001C5130(void) {
     func_001C4FF8(1, 0xFFFF);
+}
+
+s32 func_001C5250(void* self)
+{
+    return ++*(s32*)((char*)self + 0x44f8);
 }
 
 void func_001C5300(s32 arg0) {
@@ -91,6 +98,13 @@ void func_001C6E88(void) {
     func_001C6D50(1, 0xFFFF);
 }
 
+s32 func_001C6F20(void* p)
+{
+	s32 v0 = *(s32*)((char*)p + 0x1C4);
+	s32 v1 = *(s32*)((char*)p + 0x0);
+	return v0 < v1;
+}
+
 void func_001C71B0(s32 arg0) {
     if (func_0011C330() < 2) {
         func_001C7068(arg0, 5);
@@ -99,6 +113,16 @@ void func_001C71B0(s32 arg0) {
 
 void func_001C7320(void) {
     func_001C71E8(1, 0xFFFF);
+}
+
+void func_001C7470(void **self)
+{
+    if (*(s32 *)((char *)self + 0x14) == 0) {
+        s32 *slot = &D_0047904C;
+        void **linked = func_0011E118(slot);
+        *(void **)((char *)self + 0x14) = linked;
+        *linked = self;
+    }
 }
 
 s32 func_001C7D58(void) {

@@ -55,6 +55,11 @@ void func_001A64F0(s32 arg0) {
     func_001A6850(arg0, 0);
 }
 
+s32 func_001A6DD0(const float* a, const float* b)
+{
+    return a[4] < b[4] ? 1 : 0;
+}
+
 void func_001A7720(void) {
     func_001A75E8(1, 0xFFFF);
 }
