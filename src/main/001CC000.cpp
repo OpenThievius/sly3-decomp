@@ -44,3 +44,9 @@ void func_001CEF70(s32 *arg0) {
     func_002936E0(arg0[0]);
     func_002936C0(arg0[0]);
 }
+
+void func_001CFDE8(s32 arg0, s32 arg1) {
+    *(s32*)(arg0 + 0x1395C) = arg1;
+}
+
+s32 func_001CFDF8(s32 arg0) { return *(s32*)(arg0 + 0x1395C); }

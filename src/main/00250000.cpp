@@ -87,3 +87,10 @@ void func_00253950(s32 arg0, s32 arg1) {
         var_s0 += 0x10;
     } while (var_s1 >= 0);
 }
+
+void func_002539A0(s32 arg0)
+{
+    func_00253950(arg0, arg0 + 0xE20);
+    func_00253950(arg0, arg0 + 0xAE0);
+    func_00253950(arg0, arg0 + 0xC80);
+}

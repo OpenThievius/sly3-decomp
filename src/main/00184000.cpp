@@ -17,6 +17,10 @@ s32 func_00186298(s32);
 s32 func_00186338(s32);
 s32 func_00187CB8();
 extern s32 D_004794C4;
+s32 func_001878E0(void *, s32);
+s32 func_00189F38(s32, s32);
+extern s32 D_004794CC;
+s32 func_00188A38(s32);
 
 void func_00184550(s32 arg0) {
     func_001FCAC8();
@@ -51,6 +55,26 @@ int func_00185980(int bit)
     return (int)(1UL << bit);
 }
 
+s32 func_001859A8(s32 count, s32 *items)
+{
+    s32 *cursor;
+    s32 remaining;
+    s32 flags;
+
+    flags = 0;
+    if (count > 0) {
+        cursor = items;
+        remaining = count;
+        do {
+            s32 item = *cursor;
+            remaining -= 1;
+            cursor += 1;
+            flags |= func_00185980(item);
+        } while (remaining != 0);
+    }
+    return flags;
+}
+
 s32 func_00185FD8(void* p)
 {
     s32* f = (s32*)((char*)p + 0x50);
@@ -69,4 +93,33 @@ void func_00186248(s32 arg0) {
         }
         func_00186338(arg0);
     }
+}
+
+s32 func_00186FE8(char *arg0)
+{
+    s32 id;
+    if (D_004794CC != 0) {
+        id = func_00189F38(D_004794CC, 0);
+    } else {
+        id = func_00189F38(*(s32 *)(arg0 + 0x54), 0);
+    }
+    return func_001878E0(arg0, 8);
+}
+
+void func_001878A0(void *pgoal)
+{
+    s32 f = func_001FCAC8();
+    if (*(s32 *)((char *)pgoal + 0xB8) == 8) {
+        func_001878E0(pgoal, 0);
+    }
+}
+
+s32 func_00187CD0(char* p)
+{
+	s32 v = 0;
+	s32 x = *(s32*)(p + 0x58);
+	if (x != 0) {
+		v = func_00188A38(x) != 0;
+	}
+	return v;
 }

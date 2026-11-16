@@ -12,6 +12,11 @@ s32 func_001D27F0(s32);
 s32 func_00241AA0();
 s32 func_00256278(s32, s32);
 s32 func_00242830(s32, s32);
+void *func_00241B60();
+s32 func_0028F260(s32, void *, f32);
+s32 func_0013C958(s32);
+s32 func_002429C8();
+s32 func_00242B90(s32, s32);
 
 s32 func_00240970(void* p)
 {
@@ -91,6 +96,94 @@ void func_00241AD8(s32 arg0) {
     }
 }
 
+void func_00241C10(f32 x)
+{
+    void *p = func_00241B60();
+    if (p) *(f32 *)((char *)p + 8) = x;
+}
+
+f32 func_00241C40(void* self)
+{
+    f32* table = *(f32**)((char*)self + 0xD8);
+    f32* entry = 0;
+    if (table != 0) {
+        entry = *(f32**)((char*)table + 0xDC);
+    }
+    if (entry != 0) {
+        return entry[2];
+    }
+    return 0.0f;
+}
+
+void func_00241C70(f32 x)
+{
+    void *p = func_00241B60();
+    if (p) * (f32 *)((char *)p + 0xC) = x;
+}
+
+void func_00241CD0(f32 x)
+{
+    void *p = func_00241B60();
+    if (p) * (f32 *)((char *)p + 4) = x;
+}
+
+s32 func_00241D30(void* p)
+{
+	s64 v = *(s64*)((char*)p + 0x128);
+	return (s32)((v << 27) >> 32) & 1;
+}
+
+void func_00241D48(char* self, s32 flag) { s64 v = *(s64*)(self + 0x128); *(s64*)(self + 0x128) = (v & ~(1ULL << 5)) | ((s64)(flag & 1) << 5); }
+
+s32 func_00241D68(void* p)
+{
+	s64 v = *(s64*)((char*)p + 0x128);
+	return (s32)((v << 0x19) >> 32) & 0x1;
+}
+
+void func_00241D80(void* self, s32 value)
+{
+    s64 bits = (s64)(value & 1) << 7;
+    s64* word = (s64*)((char*)self + 0x128);
+    *word = (*word & -129) | bits;
+}
+
+s32 func_00241DC0(void* p)
+{
+    s64 v = *(s64*)((char*)p + 0x128);
+    return (s32)((v << 31) >> 32) & 0x1;
+}
+
+s32 func_00241DD8(const char* self)
+{
+    s64 v = *(s64*)(self + 0x128);
+    return (s32)((v << 24) >> 32) & 1;
+}
+
+void func_00241DF0(void* self, s32 value)
+{
+    s64 bits = (s64)(value & 1) << 8;
+    s64* word = (s64*)((char*)self + 0x128);
+    *word = (*word & ~0x100) | bits;
+}
+
+void func_00242488(char *arg0, f32 fparg0)
+{
+    char *temp_v1;
+
+    temp_v1 = *(char **)(arg0 + 0x24);
+    *(short *)(temp_v1 + 0xAC) = (short)(fparg0 * 1000.0f);
+    func_0028F260(*(s32 *)(arg0 + 0x20), *(void **)(arg0 + 0x24), fparg0 * 1000.0f);
+}
+
 void func_002429A8(void) {
     func_00242830(1, 0xFFFF);
+}
+
+void func_00242A58(s32 arg0) {
+    func_0013C958(arg0);
+    func_002429C8();
+    func_00242B90(arg0, 1);
+    func_0013C958(arg0);
+    func_00242B90(arg0, 6);
 }

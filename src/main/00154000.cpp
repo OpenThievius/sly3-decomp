@@ -244,3 +244,11 @@ s32 func_001577C0(char* self)
     if (func_00157800() == 0) return 0;
     return func_00157950(*(s32*)(self + 0x18));
 }
+
+void func_00157A80(char *self, s32 value)
+{
+    *(s32 *)(self + 0x50) = value == 0;
+    if (*(s32 *)(self + 0x18) != 0) {
+        *(s32 *)(*(char **)(self + 0x18) + 0xA0) = value == 0;
+    }
+}

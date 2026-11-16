@@ -73,6 +73,10 @@ s32 func_001751C0(void *self, void * unused, s32 value)
     return result;
 }
 
+void func_00175208(s32 arg0, s32 arg1, s32 arg2) {
+    func_00168AB0(func_001750B0(), 2, 2, arg2);
+}
+
 void func_001757B0(void) {
     func_00175678(1, 0xFFFF);
 }

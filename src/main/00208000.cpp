@@ -20,6 +20,8 @@ s32 func_001F48F8();
 s32 func_00208378(s32);
 s32 func_001C7A00(s32, s32, s32);
 s32 func_00209428(void *);
+s32 func_0011B028(s32, void *);
+s32 func_0020BDC0(void *);
 
 void func_00208030(void *self, void *other)
 {
@@ -73,8 +75,21 @@ f32 func_0020AC38(f32 fparg0) {
     return fparg0;
 }
 
+void* func_0020ADF0(void* self,s32 value)
+{
+    s32 size=*(s32*)((char*)self+0x3C0);
+    if (value+1<size) return (char*)self+0x3E0+value*28;
+    return 0;
+}
+
 void func_0020AFA0(void) {
     func_0020AE68(1, 0xFFFF);
+}
+
+s32 func_0020B960(void* self)
+{
+    s32 v = *(s32*)((char*)self + 0x130);
+    return v != 1;
 }
 
 void func_0020BB90(void) {
@@ -91,6 +106,12 @@ void func_0020BBD8(void) {
 
 void func_0020BBF8(s32 arg0) {
     func_0011E1F0(&D_00479CC8, arg0);
+}
+
+void func_0020BD70(char *self)
+{
+    func_0011B028(*(s32 *)(self + 4), self);
+    func_0020BDC0(self);
 }
 
 void func_0020BDA8(void) {

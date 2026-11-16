@@ -22,6 +22,21 @@ void func_001BDA68(s32 arg0) {
     func_001BE568(arg0 + 0x1C);
 }
 
+void func_001BECB8(s32* self, s32 value)
+{
+    if (value != 0) {
+        self[4] = value;
+    } else {
+        self[4] = self[3];
+    }
+}
+
 void func_001BEE08(void) {
     func_001BECD0(1, 0xFFFF);
+}
+
+void func_001BFA08(void* unused, void* out)
+{
+    *(int*)((char*)out + 0x94) = 0;
+    *(int*)((char*)out + 0x98) = 0;
 }
