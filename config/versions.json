@@ -1,0 +1,50 @@
+{
+  "game": "Sly 3: Honor Among Thieves",
+  "primary": "us",
+  "versions": {
+    "us": {
+      "title": "Sly 3: Honor Among Thieves",
+      "region": "NTSC-U (North America)",
+      "serial": "SCUS_974.64",
+      "disc_version": "1.00",
+      "role": "primary",
+      "boot": {
+        "name": "SCUS_974.64",
+        "size": 3200076,
+        "crc32": "7ab2bec7",
+        "md5": "bdf2475bba9e1e23863784db9807ade1",
+        "sha1": "5941b7877e6bf5dfb8acb2d04a3c5059367f385b",
+        "sha256": "ce817858306efd711f08bbc14f393455280119cb00b894bdc9fb1fa47bcbb338"
+      },
+      "disc": {
+        "size": 3553755136,
+        "crc32": "0a9386cf",
+        "md5": "1dfe7f0aac25320678244b4c43f12b4f",
+        "sha1": "9f89eba20011bda2ea8e839c96b9100cf7762fc6",
+        "sha256": "a7286a1ef2f0c82391eb0618765b251efdb7381e8a0b96af2c8000a2562bc9eb"
+      }
+    },
+    "eu": {
+      "title": "Sly 3: Honour Among Thieves",
+      "region": "PAL (Europe; En, Fr, De, Es, It, Nl, Pt, Sv, No, Da, Fi)",
+      "serial": "SCES_534.09",
+      "disc_version": "1.00",
+      "role": "secondary",
+      "boot": {
+        "name": "SCES_534.09",
+        "size": 3198500,
+        "crc32": "66c9fcaf",
+        "md5": "1c271ddf975a08b6c914835107a08799",
+        "sha1": "f0a74251b4c13f9fa040565db7bef0439ff3cb7e",
+        "sha256": "7aec2a74601aadbf7daa14c0c6864010b2b3199530725628bfe651861581d0c6"
+      },
+      "disc": {
+        "size": 4427055104,
+        "crc32": "e54efd23",
+        "md5": "af95a968449c6f22ddbd3552c10d5c00",
+        "sha1": "0d0ed1530d9d4d788662e7a885a5bdf9dcc6bf5d",
+        "sha256": "b773fa18824fac46159ecfba3e5dd773cb00ee7a8301a96fa05b36f9101b3d16"
+      }
+    }
+  }
+}
