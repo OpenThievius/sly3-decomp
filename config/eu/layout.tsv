@@ -1,0 +1,8 @@
+# What each part of SCES_534.09 is (config/us/layout.tsv explains the rows). The library
+# boundary is the counterpart of US 0x291DF8 (config/eu/map.tsv).
+kind	name	start	end	category	source
+code	game	00100000	00292498	game	src/main
+code	lib	00292498	002C08D0	lib	src/lib
+data	vutext	002C08D0	002CCE60	data	-
+data	rodata	002CCE80	0032D384	data	-
+data	data	0032D400	0036B858	data	-

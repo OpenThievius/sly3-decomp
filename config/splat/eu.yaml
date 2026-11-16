@@ -1,0 +1,77 @@
+# splat configuration for SCES_534.09 (PAL v1.00), the second target.
+#
+# A first split: one unit per ELF section. tools/setup_asm.py runs this.
+name: "Sly 3: Honour Among Thieves (Europe)"
+sha1: f0a74251b4c13f9fa040565db7bef0439ff3cb7e
+
+options:
+  basename: SCES_534.09
+  target_path: baserom/eu/SCES_534.09
+  elf_path: build/eu/SCES_534.09.elf
+  base_path: ../..
+  platform: ps2
+  compiler: EEGCC
+
+  asm_path: asm/eu
+  asset_path: assets/eu
+  src_path: src
+  build_path: build/eu
+  ld_script_path: build/eu/SCES_534.09.splat.ld
+
+  symbol_addrs_path: config/eu/symbol_addrs.txt
+  create_undefined_funcs_auto: True
+  undefined_funcs_auto_path: build/eu/undefined_funcs_auto.txt
+  create_undefined_syms_auto: True
+  undefined_syms_auto_path: build/eu/undefined_syms_auto.txt
+
+  generate_asm_macros_files: True
+  named_regs_for_c_funcs: False
+  mips_abi_gpr: n32           # the names GNU as accepts with -mabi=eabi ($a4-$a7, $t0-$t3)
+  find_file_boundaries: False
+  disasm_unknown: True
+  rodata_string_guesser_level: 0
+  migrate_rodata_to_functions: False
+  section_order: [".text", ".vutext", ".rodata", ".data", ".sbss", ".bss"]
+  subalign: null
+  # Sections are laid end to end as in the file: no rounding up of a section's end.
+  ld_align_segment_vram_end: False
+  ld_align_section_vram_end: False
+
+segments:
+  - [0x0, databin, elf_header]
+
+  # The segments follow the file's own order, so that the linked image laid
+  # out by file offset (objcopy -O binary) is the executable itself. Each
+  # unit runs to the next one's start, which takes in the alignment padding.
+  - name: text
+    type: code
+    start: 0x80
+    vram: 0x100000
+    subsegments:
+      - [0x80, asm, text]                    # .text     0x100000, 0x1C08D0 bytes
+
+  - name: vutext
+    type: code
+    start: 0x1C0950
+    vram: 0x2C08D0
+    subsegments:
+      - [0x1C0950, bin, vutext]                  # .vutext   0x2C08D0, VU microcode
+
+  - name: main
+    type: code
+    align: 8                # .data ends 8-aligned in the file: splat would round the next start to 16
+    start: 0x1CCF00
+    vram: 0x2CCE80
+    # The bss unit starts where the linker puts it, at the end of .data (0x36B858) rounded
+    # to 16 (0x36B860); .sbss (0x36B880) and .bss follow, to 0x4D4620.
+    bss_size: 0x168DC0
+    subsegments:
+      - [0x1CCF00, rodata, rodata]               # .rodata   0x2CCE80
+      - [0x22D480, data, data]                   # .data     0x32D400
+      - { start: 0x26B8D8, type: bss, vram: 0x36B860, name: bss }
+
+  # The rest of the file: the IOP modules (.irx, the second LOAD segment), the
+  # DVP overlay sections, .reginfo, .stack, the section names and the section
+  # header table, copied as they are until the linker script models them.
+  - [0x26B8D8, databin, elf_tail]
+  - [0x30CE24]

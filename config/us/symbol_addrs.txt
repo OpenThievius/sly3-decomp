@@ -1,0 +1,6 @@
+// Names splat cannot choose well by itself. Every entry was found in the retail
+// executable and is named by us.
+//
+// An absolute address below the executable, formed by a %hi/%lo pair: spimdisasm
+// otherwise calls it a local label (.L10), which no object defines.
+D_00000010 = 0x00000010;

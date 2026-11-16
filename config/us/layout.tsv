@@ -1,0 +1,12 @@
+# What each part of SCUS_974.64 is, for the reports (tools/progress.py) and the source tree.
+# Code: game code, then the libraries from 0x291DF8 to the end of .text. The boundary is
+# provisional (docs/ROADMAP.md): the C library starts there (block copies, rand), built
+# with the game's compiler; Sony's own libraries, with 8-byte register saves, tail calls
+# and syscalls, start near 0x293000. Data: the sections with bytes in the file, without
+# their trailing padding.
+kind	name	start	end	category	source
+code	game	00100000	00291DF8	game	src/main
+code	lib	00291DF8	002C0250	lib	src/lib
+data	vutext	002C0250	002CC790	data	-
+data	rodata	002CC800	0032CA24	data	-
+data	data	0032CA80	0036ADD8	data	-
