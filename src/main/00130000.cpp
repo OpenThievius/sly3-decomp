@@ -16,7 +16,6 @@ void* func_00130218(void* a0, void* a1, void* a2, void* a3)
 
 
 
-s32 func_0013B1C0(void* p) { return *(s32*)((u8*)p+0xC) != 0; }
 
 
 extern void func_001317B0(void*);
