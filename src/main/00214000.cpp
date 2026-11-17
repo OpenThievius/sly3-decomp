@@ -8,6 +8,8 @@ s32 func_00217D90(s32);
 s32 func_0023C660();
 s32 func_0023C970();
 s32 func_002171E8(void *, s32);
+s32 func_0011E8F0(s32, s32);
+extern f32 D_0036BB98;
 
 void func_00214928(void* p)
 {
@@ -87,4 +89,20 @@ void func_002172C8(char *self, s32 value)
             func_002171E8(self, 1);
         }
     }
+}
+
+void func_00217938(char* self)
+{
+    switch (*(s32*)(self + 0x260)) {
+    case 0:
+        *(s32*)(self + 0x260) = 1;
+        break;
+    case 1:
+        *(s32*)(self + 0x260) = 0;
+        break;
+    default:
+        *(s32*)(self + 0x260) = func_0011E8F0(0, 1);
+        break;
+    }
+    *(f32*)(self + 0x264) = D_0036BB98;
 }

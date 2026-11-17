@@ -17,6 +17,9 @@ s32 func_0028F260(s32, void *, f32);
 s32 func_0013C958(s32);
 s32 func_002429C8();
 s32 func_00242B90(s32, s32);
+s32 func_0013B500(s32, s32);
+s32 func_00237DD8(s32, f32, f32);
+s32 func_00237298(s32, f32, f32);
 
 s32 func_00240970(void* p)
 {
@@ -83,6 +86,35 @@ s32 func_002415E0(void* self)
 {
     u64 flags = *(u64*)((char*)self + 0x120);
     return (s32)(flags >> 0x3D) & 1;
+}
+
+void func_002417F8(char *arg0, f32 fparg0, f32 fparg1) {
+    s32 var_s0;
+    s32 var_s1;
+    var_s1 = 0;
+    if (*(s32 *)(arg0 + 0x94) > 0) {
+        do {
+            var_s0 = *(s32 *)(*(char **)(arg0 + 0x98) + var_s1 * 4);
+            if (func_0013B500(var_s0, 0xB3) != 0) {
+                func_00237DD8(var_s0, fparg0, fparg1);
+            }
+            var_s1 += 1;
+        } while (var_s1 < *(s32 *)(arg0 + 0x94));
+    }
+}
+
+void func_00241890(char *arg0, f32 fparg0, f32 fparg1)
+{
+    for (s32 i = 0; i < *(s32 *)(arg0 + 0x94); i++) {
+        s32 temp_s0;
+        s32 temp_v0;
+
+        temp_s0 = *(s32 *)(*(s32 *)(arg0 + 0x98) + i * 4);
+        temp_v0 = func_0013B500(temp_s0, 0xB3);
+        if (temp_v0 != 0) {
+            func_00237298(temp_s0, fparg0, fparg1);
+        }
+    }
 }
 
 void func_00241A98(void* a0)

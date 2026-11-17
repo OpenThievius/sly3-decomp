@@ -37,6 +37,8 @@ s32 func_001A4800(void *, s32, s32);
 s32 func_002541F8(s32, s32);
 s32 func_00238980();
 s32 func_00252FC0(s32, s32);
+s32 func_0017E1B8(s32 *, s32, s32, void *);
+s32 func_001A1E58();
 
 void func_001A0548(char* self, u32 a, u32 b, u32 c, u32 d)
 {
@@ -159,6 +161,22 @@ s32 func_001A2198(void* a0, void* a1)
     s32 v = *(s32*)((char*)a0 + 0xF0);
     v &= *(s32*)((char*)a1 + 0x164);
     return v != 0;
+}
+
+void func_001A2228(char *self)
+{
+    s32 temp_a0;
+    s32 temp_a1;
+    s32 temp_a2;
+    s32 temp_v0;
+
+    func_001A1E58();
+    temp_v0 = func_0017E1B8(&D_00475480, 4, *(s32 *)(self + 0x194), self);
+    *(s32 *)(self + 0x198) = temp_v0;
+    temp_v0 = func_0017E1B8(&D_00475480, 4, *(s32 *)(self + 0x19C), self);
+    *(s32 *)(self + 0x1A0) = temp_v0;
+    temp_v0 = func_0017E1B8(&D_00475480, 4, *(s32 *)(self + 0x1A4), self);
+    *(s32 *)(self + 0x1A8) = temp_v0;
 }
 
 void func_001A22A8(s32 arg0, s32 arg1) {

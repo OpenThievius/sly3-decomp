@@ -76,8 +76,8 @@ extern void func_00260298(void*, s32);
 extern void func_00262280(void*, s32);
 extern void func_00262450(void*, s32);
 extern void func_00262708(void*, void*);
-
-
+extern s32 func_00260758(void*,s32);
+extern void func_0012B2F0(void*,s32);
 
 void* func_0010C018(void* a0, void* a1, s32, void* a3)
 {
@@ -190,6 +190,15 @@ void* func_0010C988(void* a0, void* a1, s32, void* a3)
     func_0012AF00(a0, &local);
     func_0012BC20(&local);
     return a0;
+}
+
+void* func_0010CD60(void* out,void* object,s32 unused,void* arg)
+{
+ u8 temp[0x18]; *(s32*)(temp+0x10)=6;
+ func_0024B2B8(temp,1,arg,temp+0x10,temp+0x14);
+ s32 value=func_00260758(object,*(s32*)(temp+0x14));
+ func_0012B2F0(temp,value!=0);
+ func_0012AF00(out,temp); func_0012BC20(temp); return out;
 }
 
 void* func_0010CDE0(void* a0, void* a1, s32, void* a3)
@@ -637,17 +646,3 @@ void* func_0010FF08(void* a0, void* a1, s32, void* a3)
     func_0012BC20(local);
     return a0;
 }
-
-
-extern s32 func_00260758(void*,s32);
-extern void func_0012B2F0(void*,s32);
-void* func_0010CD60(void* out,void* object,s32 unused,void* arg)
-{
- u8 temp[0x18]; *(s32*)(temp+0x10)=6;
- func_0024B2B8(temp,1,arg,temp+0x10,temp+0x14);
- s32 value=func_00260758(object,*(s32*)(temp+0x14));
- func_0012B2F0(temp,value!=0);
- func_0012AF00(out,temp); func_0012BC20(temp); return out;
-}
-
-

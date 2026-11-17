@@ -80,7 +80,6 @@ extern void func_0015C2B8(void*, s32);
 extern void func_0015C340(void*, s32);
 extern void func_0015C4A8(void*, s32);
 extern void func_0015C4F8(void*, s32);
-
 struct Temp_104000
 {
     u8 pad0[0x10];
@@ -88,7 +87,6 @@ struct Temp_104000
     s32 result;
     u8 pad18[0x20 - 0x18];
 };
-
 struct Temp_104Float
 {
     u8 pad0[0x10];

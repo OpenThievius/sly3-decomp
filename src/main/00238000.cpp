@@ -12,6 +12,10 @@ extern s32 D_00479A08;
 s32 func_0023ACB0(s32, s32);
 s32 func_00239B80(s32, s32);
 s32 func_0023AA48(s32, s32, s32);
+s32 func_0011E1F0(s32 *, void *);
+s32 func_0013B500(void *, s32);
+extern s32 D_00479A48;
+s32 func_0023B3A8();
 
 void func_002381F0(void) {
     func_002380B8(1, 0xFFFF);
@@ -127,6 +131,41 @@ s32 func_0023A640(s32 arg0)
 
 void func_0023ADE8(void) {
     func_0023ACB0(1, 0xFFFF);
+}
+
+void func_0023B310(char *self)
+{
+    char *child = *(char **)(self + 0x10C);
+    if (child != 0) {
+        s32 count = *(s32 *)(child + 8) - 1;
+        *(s32 *)(child + 8) = count;
+        if (count == 0)
+            func_0011E1F0(&D_00479A48, child);
+        *(char **)(self + 0x10C) = 0;
+    }
+    char *node = *(char **)(self + 0x54);
+    while (node != *(char **)(self + 0x60)) {
+        if (func_0013B500(node, 0x2F) != 0) {
+            func_0023B310(node);
+        }
+        node = *(char **)(node + 0x24);
+    }
+}
+
+void func_0023B550(char *arg0)
+{
+    char *node;
+
+    func_0023B3A8();
+    node = *(char **)(arg0 + 0x54);
+    if (node != *(char **)(arg0 + 0x60)) {
+        do {
+            if (func_0013B500(node, 0x2F)) {
+                func_0023B550(node);
+            }
+            node = *(char **)(node + 0x24);
+        } while (node != *(char **)(arg0 + 0x60));
+    }
 }
 
 s32 func_0023B610(void* p)

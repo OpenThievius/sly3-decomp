@@ -29,6 +29,14 @@ s32 func_00157688(void *, s32);
 s32 func_00157950(s32);
 s32 func_002389A0();
 s32 func_00157800();
+s32 func_001F43C8(s32);
+s32 func_001F43D0(s32, s32);
+s32 func_001F4430(s32);
+s32 func_001F4438(s32, s32);
+s32 func_001F48A0();
+s32 func_00240E58(void *, s32, s32);
+s32 func_00154EF0(void *, s32, s32, s32);
+s32 func_001F1E18(s32);
 
 s32 func_00154330(s32 value)
 {
@@ -129,6 +137,12 @@ s32 func_00156728(s32 arg0) {
     return func_001C4018(arg0 + 0xE40) != 2;
 }
 
+void func_001567E8(s32 arg0, s32 arg1, s32 arg2) {
+    func_001F48A0();
+    func_001F43D0(arg0, func_001F43C8(arg0) + arg1);
+    func_001F4438(arg0, func_001F4430(arg0) + arg2);
+}
+
 void func_00156850(char *self, s32 arg1, void *arg2) {
     s32 temp_v0 = func_0024F7C8();
     if (arg2 != 0) {
@@ -179,6 +193,17 @@ void func_001569D8(void* self)
     *(f32*)((char*)self + 0x110C) = *(f32*)((char*)self + 0x1BC);
 }
 
+void func_00156A08(char *self, s32 value)
+{
+    *(s32 *)(self + 0x1444) = value;
+    if (value != 0) {
+        func_00240E58(self, 0x3FFFFFF, 2);
+    } else {
+        func_00240E58(self, 0x3FFFFFF, 0);
+        func_00240E58(self, 0x10FF00, 2);
+    }
+}
+
 s32 func_00156AB0(char* self)
 {
     s32* p = *(s32**)(self + 0x1140);
@@ -191,6 +216,27 @@ s32 func_00156AB0(char* self)
 void func_00156AD0(s32 arg0) {
     func_001F4D28();
     func_00156B00(arg0);
+}
+
+void func_00156DC0(char *self)
+{
+    s32 temp_v0;
+
+    void *owner = *(void **)(self + 0x11B4);
+    if (owner != 0) {
+        temp_v0 = func_001F1E18((s32)owner);
+        if (temp_v0 != 0) {
+            if (func_0013B500(temp_v0, 0x67) == 0) {
+                if (func_0013B500(temp_v0, 0x69) == 0) {
+                    s32 s0 = temp_v0;
+                    if (*(s32 *)(self + 0x145C) != 0) {
+                        *(s32 *)(self + 0x1458) = s0;
+                        func_00154EF0(self, *(s32 *)(self + 0x145C), s0, -1);
+                    }
+                }
+            }
+        }
+    }
 }
 
 void func_00156E48(void* self, f32 value)

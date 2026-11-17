@@ -20,9 +20,27 @@ extern s32 D_00475480;
 s32 func_00168AB0(void *, s32, s32, s32);
 void *func_001750B0();
 s32 func_0013BD88(s32, void *);
+s32 func_0029F158();
+s32 func_0029FA38(s32);
+s32 func_0029FA60(s32);
+extern s32 D_0036BD38;
+extern s32 D_0036BD3C;
+extern s32 D_0036BD40;
+extern s32 D_0036BD44;
+extern s32 D_0036BD48;
 
 void func_001743E8(void) {
     func_001742B0(1, 0xFFFF);
+}
+
+void func_00174408(void) {
+    func_0029FA60(1);
+    func_0029F158();
+    D_0036BD38 = func_0029FA38(0);
+    D_0036BD3C = func_0029FA38(1);
+    D_0036BD40 = func_0029FA38(2);
+    D_0036BD44 = func_0029FA38(8);
+    D_0036BD48 = func_0029FA38(9);
 }
 
 void func_001744C0(int* self)

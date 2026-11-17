@@ -17,6 +17,8 @@ s32 func_002389A0();
 extern f32 D_0036BB98;
 extern s32 D_0036DB9C;
 extern s32 D_0036DBA0;
+s32 func_001B67C0(void *, s32, s32, s32);
+extern s32 D_0036DB98;
 
 s32 func_001880F0(void* self)
 {
@@ -59,6 +61,19 @@ void func_00189E60(void* self, s32 a1, s32 a2)
 {
     *(s32*)((char*)self + 0xB0) = a1;
     *(s32*)((char*)self + 0xB4) = a2;
+}
+
+void func_0018AA48(void *self, void *other)
+{
+    if (other != 0) {
+        D_0036DB98 = *(s32 *)((char *)other + 0x18);
+    } else {
+        D_0036DB98 = -1;
+    }
+    if (other != *(void **)((char *)self + 0x4044)) {
+        func_001B67C0(self, 0, 0, 0);
+    }
+    *(void **)((char *)self + 0x4044) = other;
 }
 
 void func_0018AAB8(char* self, char* pxf)
