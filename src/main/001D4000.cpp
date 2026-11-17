@@ -35,6 +35,16 @@ s32 func_00252E40(s32, s32);
 s32 func_00238980();
 s32 func_00252FC0(s32, s32);
 s32 func_001D8AC0(s32);
+s32 func_0021DD30(s32 *);
+s32 func_0025AE28(s32 *);
+extern s32 D_003751D0;
+extern s32 D_0046F7A0;
+extern s32 D_0046F810;
+extern s32 D_0046FAA0;
+extern s32 D_0046FBE0;
+extern s32 D_0046FC30;
+extern s32 D_0046FD00;
+extern s32 D_00475480;
 
 s32 func_001D47C0(void) {
     return func_001D45B0() == 0x57;
@@ -42,6 +52,39 @@ s32 func_001D47C0(void) {
 
 void func_001D47E8(void) {
     func_001D3AE8(&D_0046F550);
+}
+
+s32 func_001D4808(void) {
+    s32 var_v0;
+
+    var_v0 = 0;
+    if (func_0025AE28(&D_00475480) == 0) {
+        var_v0 = 0;
+        if (func_0021DD30(&D_0046F550) == 0) {
+            var_v0 = 0;
+            if (func_0021DD30(&D_0046FAA0) == 0) {
+                var_v0 = 0;
+                if (func_0021DD30(&D_0046FC30) == 0) {
+                    var_v0 = 0;
+                    if (func_0021DD30(&D_0046F7A0) == 0) {
+                        var_v0 = 0;
+                        if (func_0021DD30(&D_0046F810) == 0) {
+                            var_v0 = 0;
+                            if (func_0021DD30(&D_003751D0) == 0) {
+                                if (func_0021DD30(&D_0046FBE0) != 0) {
+                                    return 0;
+                                }
+                                var_v0 = func_0021DD30(&D_0046FD00) == 0;
+                                /* Duplicate return node #11. Try simplifying control flow for better match */
+                                return var_v0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return var_v0;
 }
 
 void func_001D4DE8(char *arg0) {

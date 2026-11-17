@@ -22,6 +22,13 @@ extern s32 D_00346F70;
 s32 func_001FC090(s32, s32);
 s32 func_00119830(s32);
 s32 func_0023C0B8();
+s32 func_00153D40(void *, void *);
+extern f32 D_0036BB98;
+s32 func_0013A9E0(void *);
+s32 func_001B5910(void *);
+s32 func_001B88E0(void *);
+s32 func_001C2870(void *);
+s32 func_0024E2B8();
 
 s32 func_001F0E28(void* p)
 {
@@ -38,6 +45,40 @@ s32 func_001F0F48(char* self)
 		}
 	}
 	return 0;
+}
+
+void func_001F1008(char *self, char *other) {
+    if (*(s32 *)(self + 0x1470) != 0 && *(s32 *)(self + 0x50C) != 0) {
+        *(f32 *)(self + 0x1154) = D_0036BB98;
+    }
+    func_00153D40(self, other);
+    s32 n = *(s32 *)(self + 0x1470);
+    if (n < 5) {
+        if (n >= 3) {
+            *(s32 *)(other + 0x6C) |= 1;
+        }
+    }
+}
+
+void func_001F1080(char *self)
+{
+    s32 state;
+    func_0024E2B8();
+    state = *(s32 *)(self + 0x1470);
+    switch (state) {
+    case 5:
+        func_001B88E0(self + 0x320);
+        return;
+    case 6:
+        func_001B5910(self + 0x500);
+        return;
+    case 7:
+        func_001C2870(self + 0xE40);
+        return;
+    case 8:
+        func_0013A9E0(self + 0x10D0);
+        break;
+    }
 }
 
 void func_001F1120(char *obj, s32 a, s32 b)

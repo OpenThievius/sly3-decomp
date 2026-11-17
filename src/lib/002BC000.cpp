@@ -414,6 +414,24 @@ void func_002BE948(s32 arg0, s32 arg1) {
     }
 }
 
+void func_002BE970(char **arg0, char *arg1) {
+    char *vtable;
+    void (*method)(char *);
+
+    if (arg1 != 0) {
+        vtable = *(char **)(arg1 + 0xC);
+        method = *(void (**)(char *))(vtable + 0xC);
+        method(arg1 + *(short *)(vtable + 8));
+    }
+    if (*(char **)(arg0) != 0) {
+        char *old = *arg0;
+        vtable = *(char **)(old + 0xC);
+        method = *(void (**)(char *))(vtable + 0x14);
+        method(old + *(short *)(vtable + 0x10));
+    }
+    *(char **)(arg0) = arg1;
+}
+
 void func_002BE9D8(s32 *arg0, s32 arg1) {
     s32 temp_a0;
 

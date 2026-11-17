@@ -37,6 +37,29 @@ s32 func_001731B0();
 s32 func_00173228(void *);
 s32 func_001C9118(void *, s32);
 s32 func_0028FD70();
+s32 func_00170410(void *, void *, s32);
+s32 func_001C8970(void *, s32, s32 *, s32);
+s32 func_0023AAE8(s32, void *, s32, s32, void *);
+s32 func_0023C580();
+extern s32 D_00344880;
+
+void func_00170118(void *self, void *other, void *arg)
+{
+    if (other != 0) {
+        if (other != *(void **)((char *)self + 0xD0)) {
+            if (func_00170528() == 0) {
+                u32 n = *(u32 *)((char *)self + 0xD8);
+                if (n < 32) {
+                    *(u32 *)((char *)self + 0xD8) = n + 1;
+                    u32 *entry = (u32 *)((char *)self + ((n * 0x14) + 0xDC));
+                    entry[0] = (u32)other;
+                    entry[1] = (u32)arg;
+                    func_00170410(self, entry, 0);
+                }
+            }
+        }
+    }
+}
 
 s32 func_00170500(void)
 {
@@ -49,6 +72,20 @@ s32 func_00170500(void)
 
 void func_00170DD0(void) {
     func_00170C98(1, 0xFFFF);
+}
+
+void func_00170E20(char *self)
+{
+    s32 v = func_0023C580();
+    func_001C8970(self, 2, &D_00344880, 0);
+    *(s32 *)(self + 0x144) = 0;
+    func_0023AAE8(*(s32 *)(self + 0x138), self, 0x73D, 0, self + 0x13C);
+    s32 flags = *(s32 *)(self + 0x3C);
+    if ((flags ^ 1) & 1) {
+        *(s32 *)flags = *(s32 *)flags | 2;
+    } else {
+        *(s32 *)(self + 0x3C) = flags | 2;
+    }
 }
 
 void func_00170EA0(s32 arg0) {

@@ -24,6 +24,12 @@ extern s32 D_003512F0;
 extern s32 D_003512C8;
 extern s32 D_003512A0;
 extern s32 D_00351278;
+s32 func_002B3B90(s32);
+s32 func_002BA8A8(s32, s32);
+s32 func_002BA8F8(s32, s32);
+extern s32 D_004D2AD8;
+s32 func_002BABA8(s32 *, s32);
+s32 func_002BB8B8(s32 *, s32);
 
 void func_002B8750(int* p)
 {
@@ -60,6 +66,28 @@ void func_002BA690(s32 arg0, s32 arg1) {
     if (arg1 & 1) {
         func_001D2818(arg0);
     }
+}
+
+void func_002BA840(s32 arg0, s32 arg1) {
+    func_002BA8F8(arg0 + 0xC, 2);
+    func_002B3B90(arg0);
+    func_002BA8A8(arg0, 0);
+    if (arg1 & 1) {
+        func_0011E1F0(&D_004D2AD8, arg0);
+    }
+}
+
+void func_002BAA50(s32 **arg0, s32 *arg1) {
+    if (arg1 != 0) {
+        *arg1 += 1;
+    }
+    s32 *target = *arg0;
+    if (target != 0) {
+        if (--(*target) == 0) {
+            func_002BABA8(target, 3);
+        }
+    }
+    *arg0 = arg1;
 }
 
 void func_002BAB68(s32 **arg0, s32 *arg1) {
@@ -188,6 +216,21 @@ void func_002BBEC8(s32 arg0, s32 arg1) {
     if (arg1 & 1) {
         func_001D2818(arg0);
     }
+}
+
+void func_002BBF40(s32 **arg0, s32 *arg1) {
+    if (arg1 != 0) {
+        *arg1 += 1;
+    }
+    s32 *target = *arg0;
+    if (target != 0) {
+        s32 value = *target - 1;
+        *target = value;
+        if (value == 0) {
+            func_002BB8B8(target, 3);
+        }
+    }
+    *arg0 = arg1;
 }
 
 void func_002BBFE8(s32 arg0, s32 arg1) {

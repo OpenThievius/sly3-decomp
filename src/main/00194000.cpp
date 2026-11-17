@@ -25,6 +25,9 @@ s32 func_00197838(void *, s32, s32, s32);
 s32 func_00238980();
 s32 func_00238A38(void *);
 s32 func_00252FC0(s32, s32);
+s32 func_0011AD80(s32, void *);
+void *func_0011E118(s32 *);
+extern s32 D_00479D2C;
 
 void func_001944E8(s32 arg0, s32 arg1, s32 arg2) {
     func_00194280();
@@ -91,6 +94,16 @@ void func_00197168(s32 arg0) {
 void func_00197198(s32 arg0) {
     func_001C7DC8();
     func_001971C8(arg0);
+}
+
+void *func_00197628(s32 arg0, s32 arg1, s32 arg2) {
+    s32 *temp_s0;
+
+    temp_s0 = (s32 *)func_0011E118(&D_00479D2C);
+    temp_s0[0] = arg1;
+    temp_s0[1] = arg2;
+    func_0011AD80(arg0 + 0x40, temp_s0);
+    return temp_s0;
 }
 
 void func_00197690(s32 arg0, s32 arg1) {

@@ -79,7 +79,6 @@ extern void func_001E50B0(void*, s32);
 extern void func_001DF7E8(void*, s32);
 extern void func_0017D7D0(void*);
 extern void func_0012B2F0(void*, s32);
-
 struct Temp_108000
 {
     u8 pad0[0x10];
@@ -87,6 +86,14 @@ struct Temp_108000
     s32 result;
     u8 pad18[0x20 - 0x18];
 };
+typedef unsigned int Quad_00109EC8 __attribute__((mode(TI)));
+struct Temp_00109EC8 { u8 pad[0x10]; s32 value; u8 tail[0x0C]; };
+struct Stack_00109EC8 { Quad_00109EC8 result; Temp_00109EC8 local; };
+extern void* func_0024B2B8(void*, s32, void*, void*, ...);
+extern void func_0012BC20(void*);
+extern void func_0012BDD8(void*, s32);
+extern void func_001AFBE0(void*, Quad_00109EC8);
+extern void* func_0012AF00(void*, void*);
 
 void* func_00108088(void* a0, void* a1, s32, void* a3)
 {
@@ -486,6 +493,19 @@ void* func_00109E40(void* a0, void* a1, s32, void* a3)
     func_001AFAA8(a1, local.result);
     func_0012AF00(a0, &local);
     func_0012BC20(&local);
+    return a0;
+}
+
+void* func_00109EC8(void* a0, void* a1, s32, void* a3)
+{
+    Stack_00109EC8 stack;
+    stack.local.value = 2;
+    func_0024B2B8(&stack.local, 1, a3, &stack.local.value, &stack.result);
+    func_0012BC20(&stack.local);
+    func_0012BDD8(&stack.local, 0x22);
+    func_001AFBE0(a1, stack.result);
+    func_0012AF00(a0, &stack.local);
+    func_0012BC20(&stack.local);
     return a0;
 }
 
@@ -963,26 +983,5 @@ void* func_0010BF90(void* a0, void* a1, s32, void* a3)
     func_001DF7E8(a1, local.result);
     func_0012AF00(a0, &local);
     func_0012BC20(&local);
-    return a0;
-}
-
-typedef unsigned int Quad_00109EC8 __attribute__((mode(TI)));
-struct Temp_00109EC8 { u8 pad[0x10]; s32 value; u8 tail[0x0C]; };
-struct Stack_00109EC8 { Quad_00109EC8 result; Temp_00109EC8 local; };
-extern void* func_0024B2B8(void*, s32, void*, void*, ...);
-extern void func_0012BC20(void*);
-extern void func_0012BDD8(void*, s32);
-extern void func_001AFBE0(void*, Quad_00109EC8);
-extern void* func_0012AF00(void*, void*);
-void* func_00109EC8(void* a0, void* a1, s32, void* a3)
-{
-    Stack_00109EC8 stack;
-    stack.local.value = 2;
-    func_0024B2B8(&stack.local, 1, a3, &stack.local.value, &stack.result);
-    func_0012BC20(&stack.local);
-    func_0012BDD8(&stack.local, 0x22);
-    func_001AFBE0(a1, stack.result);
-    func_0012AF00(a0, &stack.local);
-    func_0012BC20(&stack.local);
     return a0;
 }

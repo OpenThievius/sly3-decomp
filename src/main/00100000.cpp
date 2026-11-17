@@ -58,7 +58,6 @@ extern void func_00256758(void*, s32);
 extern void func_00256818(void*);
 extern void func_00254288(void*, s32);
 extern void func_00274660(void*);
-
 struct Temp_100A00
 {
     u8 pad0[0x10];
@@ -66,7 +65,6 @@ struct Temp_100A00
     s32 result;
     u8 pad18[0x20 - 0x18];
 };
-
 struct Temp_101290
 {
     u8 pad0[0x10];
