@@ -646,3 +646,12 @@ void* func_0010FF08(void* a0, void* a1, s32, void* a3)
     func_0012BC20(local);
     return a0;
 }
+
+
+void* func_0010C800(void* a0, void* a1, s32, void* a3) ;
+
+void* func_0010C880(void* a0, void* a1, s32, void* a3) ;
+
+void* func_0010C800(void* a0, void* a1, s32, void* a3) { u8 local[0x10]; func_0024B2B8(local, 0, a3, 0); func_0012BC20(local); func_0012BDD8(local, 0x22); void* object = *(void**)((u8*)a1 + 0x0C); s32 offset = *(s16*)((u8*)object + 0x1C0); object = *(void**)((u8*)object + 0x1C4); ((void (*)(void*))object)((u8*)a1 + offset); func_0012AF00(a0, local); func_0012BC20(local); return a0; }
+
+void* func_0010C880(void* a0, void* a1, s32, void* a3) { u8 local[0x10]; func_0024B2B8(local, 0, a3, 0); func_0012BC20(local); func_0012BDD8(local, 0x22); void* object = *(void**)((u8*)a1 + 0x0C); s32 offset = *(s16*)((u8*)object + 0x1B0); object = *(void**)((u8*)object + 0x1B4); ((void (*)(void*))object)((u8*)a1 + offset); func_0012AF00(a0, local); func_0012BC20(local); return a0; }

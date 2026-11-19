@@ -98,3 +98,23 @@ void func_0020F738(s32 arg0, s32 arg1) {
     }
     func_001F4548(arg0, arg1);
 }
+
+struct S_20C6C8 { u8 pad[0xE4]; u32 field; };
+
+struct __attribute__((aligned(16))) Quad_00325AC0 { s32 x[4]; };
+
+struct Self_20E2A8 { u8 pad[0x18]; f32 f18; u8 pad2[0xA0-0x1C]; Quad_00325AC0 fA0; };
+
+extern void func_0020BC20(void*);
+
+extern Quad_00325AC0 D_00325AC0;
+
+extern void* func_0011E118(void*);
+
+extern u8 D_004798D0[];
+
+void func_0020C6C8(S_20C6C8* self, void* b) ;
+
+void func_0020C6C8(S_20C6C8* self, void* b) { void* p = func_0011E118(D_004798D0); *(void**)p = b; *(u32*)((u8*)p + 8) = self->field; *(void**)&self->field = p; }
+
+void func_0020E2A8(Self_20E2A8* self) { func_0020BC20(self); self->f18 = 5.0f; self->fA0 = D_00325AC0; }

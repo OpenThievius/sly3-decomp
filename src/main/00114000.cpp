@@ -1435,3 +1435,21 @@ void func_00117E88(void* pobject)
 void func_00117F40(void) {
 
 }
+
+extern void func_00117E78(void*,s32,s32);
+
+extern void func_002B89B8(void*);
+
+extern void func_001D25B0(void*);
+
+extern void func_001D2470(void*);
+
+void func_00117CB8(s32 a, s32 v) { s32 local[2]; local[1]=0x10; local[0]=v; func_001D2470(local); }
+
+void func_00117CE0(s32 a, s32 v1, s32 v2) { s32 local[2]; local[1]=v2; local[0]=v1; func_001D2470(local); }
+
+void func_00117D48(s32 a, s32 v) { s32 local[2]; local[1]=0x10; local[0]=v; func_001D25B0(local); }
+
+void func_00117D70(s32 a, s32 v1, s32 v2) { s32 local[2]; local[1]=v2; local[0]=v1; func_001D25B0(local); }
+
+void* func_00117E30(u8* s) { extern u8 D_00350E10[]; func_002B89B8(s); *(void**)s = &D_00350E10; func_00117E78(s, 0, 0); return s; }

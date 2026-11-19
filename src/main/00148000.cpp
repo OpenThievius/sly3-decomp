@@ -256,3 +256,43 @@ void func_0014BE58(s32 arg0, s32 arg1) {
 void func_0014BF90(void) {
     func_0014BE58(1, 0xFFFF);
 }
+
+typedef long long v2l __attribute__((vector_size(16)));
+
+struct List_C0370 { s32 x0; s32 x4; s32 x8; };
+
+struct Obj_1495F8 { u8 pad[0x108C]; void* f108C; };
+
+struct Obj_15CF38 { u8 pad[0x28]; u64 flags; };
+
+struct List_15AE18 { s32 x0, x4, x8, xC; };
+
+struct Obj_15AE18 { u8 pad[0x3DE8]; List_15AE18 list; };
+
+struct List_15B728 { s32 x0, x4, x8, xC; };
+
+struct Obj_15B728 { u8 pad[0x3E50]; List_15B728 list; };
+
+struct Node_23DCA0 { u8 pad[0x70]; u64 flags; };
+
+struct Self_23DCA0 { u8 pad[0xDC]; Node_23DCA0* node; };
+
+extern List_C0370 D_00479BC8;
+
+extern u8 D_00479BBC[];
+
+extern u8 D_00479944[];
+
+extern u8 D_00479950[];
+
+extern void func_001C9118(void*, s32);
+
+extern s32 func_0028FD70(u8*);
+
+extern s32 func_0011AF38(u8*, s32);
+
+void func_00149718(u8* a) ;
+
+void func_00149718(u8* a) { (void)func_0028FD70(a); u8* s = a; (void)func_0011AF38(s+0x438, 0x1090); *(f32*)(s+0x34) = 1.0e10f; *(s32*)(s+0x18) = -1; func_001C9118(s, 1); u32 p = *(u32*)(s+0x3C); if (!(p & 1)) *(u32*)p = (*(u32*)p & 1) | 0xE; else *(u32*)(s+0x3C) = (p & 1) | 0xE; }
+
+void func_0014B218(u8* a, u8* b, u8* c) { if (b) *(v2l*)b = *(v2l*)(a+0x20); if (c) { *(s32*)(c+0x8)=0; *(s32*)(c+0x4)=0; *(s32*)(c+0x0)=0; } }

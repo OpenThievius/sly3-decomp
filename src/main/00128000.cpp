@@ -481,3 +481,28 @@ Counted_12B1F8* func_0012B1F8(Counted_12B1F8* self, s32* count)
     (*count)++;
     return self;
 }
+
+
+extern void* func_00129B18(void*, void*, s32, void*);
+
+void* func_001283D0(void* a0, void* a1, void* a2) ;
+
+void* func_001283D0(void* a0, void* a1, void* a2) { u8 local[0x10]; *(s16*)local = -1; func_00129B18(a2, (void*)(s64)*(s32*)((u8*)a1 + 4), 1, local); func_0012AF00(a0, local); func_0012BC20(local); return a0; }
+
+void* func_0012B1D8(u8* a, u8* b) { *(s32*)(a+4) = (s32)b; *(u16*)a = 0x1D; *(u16*)(b+2) = *(u16*)(b+2) + 1; return a; }
+
+void* func_0012B270(u8* s, s32 v) { func_0012BC20(s); *(s32*)(s+4)=v; *(s16*)s=0x13; return s; }
+
+void* func_0012B2B0(u8* s, f32 v) { func_0012BC20(s); *(f32*)(s+4)=v; *(s16*)s=0x14; return s; }
+
+void* func_0012B2F0(u8* s, s32 v) { func_0012BC20(s); *(s32*)(s+4)=v; *(s16*)s=0x15; return s; }
+
+void* func_0012B330(u8* s, s32 v) { func_0012BC20(s); *(s32*)(s+4)=v; *(s16*)s=0x16; return s; }
+
+void* func_0012B370(u8* s, s32 v) { func_0012BC20(s); *(s32*)(s+4)=v; *(s16*)s=0x17; return s; }
+
+void* func_0012B6C8(u8* s, u8* v) { *(u16*)(v+2) = *(u16*)(v+2) + 1; func_0012BC20(s); *(s32*)(s+4)=(s32)v; *(s16*)s=0x1D; return s; }
+
+void* func_0012B718(u8* s, u8* v) { *(s32*)(v+0) = *(s32*)(v+0) + 1; func_0012BC20(s); *(s32*)(s+4)=(s32)v; *(s16*)s=0x1E; return s; }
+
+void* func_0012B7C8(u8* s, u8* v) { *(s32*)(v+0) = *(s32*)(v+0) + 1; func_0012BC20(s); *(s32*)(s+4)=(s32)v; *(s16*)s=0x20; return s; }

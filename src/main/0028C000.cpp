@@ -38,3 +38,9 @@ void func_0028FDE0(s32 arg0, s32 arg1) {
     func_00290438();
     func_001519C8(arg0, arg1);
 }
+
+struct Arg_0028C310 { u8 pad0[0x10]; s32 x10; };
+
+struct Arg_0028C2E8 { u8 pad0[0x10]; s32 x10; };
+
+void func_0028C310(Arg_0028C310* p, s32 x) { func_0028C250(x, p->x10, (s32)p); }

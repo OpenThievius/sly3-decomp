@@ -113,3 +113,13 @@ void func_0018B7F0(s32 arg0) {
     func_0018B828(arg0);
     func_0018BEE8(arg0);
 }
+
+extern void func_00238970(void*);
+
+extern void func_00252E40(void*, s32);
+
+void func_00189078(void* a0, void* a1, void* a2) ;
+
+void func_001890B0(void* a0, void* a1, void* a2) ;
+
+void func_0018B6C0(u8* s) { func_00238970(s); func_00252E40(*(void**)(s+0x10), 0x40); *(s32*)(s+0x34) = -1; *(s32*)(s+0x3C) = -1; *(s32*)(s+0x48) = -1; }

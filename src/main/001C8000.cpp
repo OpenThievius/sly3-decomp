@@ -271,3 +271,22 @@ void func_001CB758(s32 arg0, s32 arg1) {
 void func_001CB890(void) {
     func_001CB758(1, 0xFFFF);
 }
+
+
+extern f32 D_003212DC;
+
+extern u8 D_003174C0[];
+
+extern u8 D_0036C700[];
+
+extern void func_001854C8(u8*, s32, void*);
+
+extern void func_0013BB58(void*, s32);
+
+void func_001C86B8(void* a0, s32 a1) ;
+
+void func_001C86B8(void* a0, s32 a1) { func_0013BB58(a0, a1); switch (a1) { case 5: func_001854C8(D_0036C700, 0x1D, a0); break; case 6: func_001854C8(D_0036C700, 0x1E, a0); break; } }
+
+void* func_001C87B0() { return &D_003174C0; }
+
+s32 func_001C9100(u8* a) { s64 v = *(u64*)((u8*)a + 0x28); s64 r = (v << 12) >> 60; return (s32)r; }

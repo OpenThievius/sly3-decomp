@@ -182,3 +182,15 @@ void func_00203EF8(s32 arg0) {
     func_00137628(arg0 + 0x424);
     func_00205168(arg0);
 }
+
+struct Vobj_1A0F28 { u8 pad0[8]; s16 delta; u8 padA[2]; u8* (*fn)(u8*); };
+
+extern void func_001C9118(void*, s32);
+
+extern void func_001A0708(u8*);
+
+extern s32 func_0022D708(u8*);
+
+extern f32 D_003212DC;
+
+void func_00203550(u8* a) { (void)func_0022D708(a); u8* s = a; u8* s1 = s+0x1A8; func_001A0708(s+0x180); func_001C9118(s, 2); *(f32*)(s+0x1D0) = 1000.0f; *(f32*)(s+0x1D4) = 1.0f; *(f32*)(s+0x1DC) = 1.0f; Vobj_1A0F28* v = *(Vobj_1A0F28**)(s1+0x14); u8* r = v->fn(s1 + v->delta); *(u64*)(r+0x28) |= 0x8000ULL << 45; *(f32*)(s+0x1A8) = 1250.0f; *(s32*)(s1+0x18) = -1; v = *(Vobj_1A0F28**)(s1+0x14); u8* r2 = v->fn(s1 + v->delta); s32 p = *(s32*)(r2+0x3C); if (!(p & 1)) *(s32*)p &= -0x41; else *(s32*)(r2+0x3C) = p & -0x41; }

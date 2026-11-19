@@ -118,3 +118,23 @@ s32 func_0011E9C8(f32 fparg0, f32 fparg1, f32 fparg2) {
 void func_0011FD48(void) {
     func_0011FC10(1, 0xFFFF);
 }
+
+typedef long long v2l __attribute__((vector_size(16)));
+
+extern v2l D_00317550;
+
+extern void func_00291E8C(void*,void*,s32);
+
+extern void func_0011CBF0(void*, s32, v2l);
+
+extern void func_002A3EE8(f32,f32);
+
+extern void func_0011E1F0(void*, void*);
+
+extern void* func_0011E118(void*);
+
+void* func_0011CBA0(u8* s, s32 p1) { v2l buf[3]; func_0011CBF0(buf, p1, D_00317550); func_00291E8C(s, buf, 0x30); return s; }
+
+void func_0011D4F8(u8* a) { func_002A3EE8(*(f32*)((u8*)a+4), *(f32*)a); }
+
+void func_0011E230(void* self) { void* p = func_0011E118(self); func_0011E1F0(self, p); }

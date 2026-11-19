@@ -142,3 +142,45 @@ void func_0018CFE0(s32 arg0, s32 arg1) {
 void func_0018D118(void) {
     func_0018CFE0(1, 0xFFFF);
 }
+
+struct S750 {
+    u8 pad[0x10];
+    u32 f10;
+    u32 f14;
+    void* f18;
+    u32 f1C;
+    u32 f20;
+    u32 f24;
+};
+
+extern void func_00174480(void* a0);
+
+extern u8 D_00358A10[];
+
+struct Ctx_18CDA0 {
+    u8 pad0[0xC];
+    u8* alloc;
+};
+
+struct Ctx_18CC38 {
+    u8 pad0[0xC];
+    u8* alloc;
+};
+
+union FU_18CDA0 { f32 f; u32 u; };
+
+extern f32 D_003212DC;
+
+extern s32 func_0018C878(u8*, s32, s32);
+
+void func_0018CC38(Ctx_18CC38* self, s32 a1, s32 a2, s32 a3, s32 a4) ;
+
+void func_0018CDA0(Ctx_18CDA0* self, u32 a1, f32 f) ;
+
+S750* func_0018C750(S750* self) { func_00174480(self); self->f14 = 1; self->f18 = &D_00358A10; self->f1C = 0; self->f20 = 0; self->f24 = 0; return self; }
+
+void func_0018CC38(Ctx_18CC38* self, s32 a1, s32 a2, s32 a3, s32 a4) { func_0018C878((u8*)self, 1, 4); s32* p = (s32*)self->alloc; self->alloc = (u8*)p + 0x10; p[0] = a1; p[1] = a2; p[2] = a3; p[3] = (a4 & 0xFF) << 4; }
+
+void func_0018CDA0(Ctx_18CDA0* self, u32 a1, f32 f) { func_0018C878((u8*)self, 0, 1); s64* p = (s64*)self->alloc; self->alloc = (u8*)p + 8; FU_18CDA0 conv; conv.f = f; *p = (u64)a1 | ((u64)conv.u << 32); }
+
+u8* func_0018D138(u8* a) { *(s32*)(a+0x4C) = -1; return a; }

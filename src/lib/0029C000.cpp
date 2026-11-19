@@ -94,3 +94,9 @@ void func_0029F940(void) {
 }
 
 u32 func_0029F9D8(u32 x) { if ((x >> 28) == 7) { x &= 0xFFFFFFF; x |= 0x80000000; } return x; }
+
+extern void func_0029F960(void* self);
+
+struct State_0029FDE8 { u32 x0; };
+
+s32 func_0029FDE8(State_0029FDE8* self, s32 a1) { if (a1 != 1) { func_0029F960(self); return 0; } return (self->x0 >> 8) & 1; }
