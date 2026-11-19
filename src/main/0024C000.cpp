@@ -171,3 +171,31 @@ void func_0024F068(char* self, s32 value)
         }
     }
 }
+
+struct S_24D6B0 { u8 pad0[0xDC]; void* pDC; s32 pE0; };
+
+typedef long long v2l __attribute__((vector_size(16)));
+
+struct S_27CC70 { u8 pad0[0x1E0]; void* field1E0; };
+
+typedef void (*Fn_1F66D8)(u8*, s32, u8*);
+
+extern void func_0028F260(void*);
+
+extern void func_0011C8C0(void*, v2l);
+
+extern v2l D_00317550;
+
+extern void func_0014D1F0(void* a0, void* a1);
+
+extern s32 func_001D24D0(void* buf, s32 src);
+
+s32 func_0024D6B0(S_24D6B0* self) ;
+
+struct Q_141308 { u64 x; } __attribute__((packed));
+
+struct Q_213E90 { u64 x; } __attribute__((packed));
+
+void func_0024D9A8(void* self, s32 a1) ;
+
+void func_0024E878(u8* s, f32 x) { if (*(s32*)(s+0x1B4) != 0) return; *(f32*)(s+0x1BC)=x; v2l buf[3]; func_0011C8C0(buf, D_00317550); *(v2l*)(s+0x1C0)=buf[0]; *(v2l*)(s+0x1D0)=buf[1]; *(v2l*)(s+0x1E0)=buf[2]; if (*(s32*)(s+0x4C) != 0) func_0028F260(s); }

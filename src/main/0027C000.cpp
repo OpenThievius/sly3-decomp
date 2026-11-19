@@ -557,3 +557,47 @@ void func_0027FFE0(s32 arg0, s32 arg1) {
     func_0028FDE0();
     func_00119830(arg1);
 }
+
+struct S190 {
+    u8 pad[0x10];
+    u32 f10;
+    u32 f14;
+    void* f18;
+    u32 f1C;
+};
+
+extern void func_00174480(void* a0);
+
+extern u8 D_003571E8[];
+
+extern void func_00118DA0(void* self, s32 count, void* dst);
+
+extern void func_0027E420(s32 a0, s32 a1, s32 a2, s32 a3, s32* p0, void** p4);
+
+struct S_27CC70 { u8 pad0[0x1E0]; void* field1E0; };
+
+struct Q_141308 { u64 x; } __attribute__((packed));
+
+struct Q_213E90 { u64 x; } __attribute__((packed));
+
+typedef void (*Fn_1F66D8)(u8*, s32, u8*);
+
+extern void func_0028FD70();
+
+extern void func_0023F400(void* a0, s32 a1);
+
+extern void func_0014D1F0(void* a0, void* a1);
+
+extern void func_00238500(void* a0, void* a1);
+
+extern s32 func_001D24D0(void* buf, s32 src);
+
+void func_0027CC70(S_27CC70* self, S_27CC70* other) ;
+
+void func_0027CC70(S_27CC70* self, S_27CC70* other) { func_0023F400(self, (s32)other); if (self->field1E0 == other) self->field1E0 = self; }
+
+S190* func_0027E190(S190* self) { func_00174480(self); self->f10 = 1; self->f18 = &D_003571E8; self->f1C = 0; return self; }
+
+void func_0027E568(s32 a0, s32 a1, s32 a2, void* self, s32 a4) { s32 p0; void* p4; func_0027E420(a0, a1, a2, a4, &p0, &p4); func_00118DA0(self, p0, p4); }
+
+void func_0027E8E8(s32 p0) { func_0028FD70(); *(s32*)((u8*)(p0) + 0x100) = -0x1; }

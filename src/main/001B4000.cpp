@@ -87,3 +87,7 @@ s32 func_001B71D8(char *self)
         r = 0;
     func_00147E08(*(s32 *)(self + 0x0), 0xC, 5, (char *)self + 0x144, 0, 0, 0, (char *)self + 0x180);
 }
+
+extern void* func_0017E1B8(void*, s32, s32, u8*);
+
+void func_001B7000(u8* a) { *(s32*)(a+0x4F44) = (s32)func_0017E1B8(a, 0x405, 0x6F8, 0); }

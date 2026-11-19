@@ -304,3 +304,33 @@ void func_00167A10(void* pgoal, f32 fp)
         *(f32*)((char*)pobj + 0x18) = fp;
     }
 }
+
+typedef long long v2l __attribute__((vector_size(16)));
+
+extern void func_00290078(void*);
+
+extern void func_0028EC08(void*, s32, s32, void*);
+
+extern void func_00167BF0(void*, s32, s32, s32, s32);
+
+extern void func_00167AB0(void*, s32, s32, s32, s32);
+
+extern f32 D_0036BB98;
+
+void func_001641B0(void* a0) ;
+
+void func_00166DE8(u8* s, u8* arg1) { v2l buf[4]; func_0028EC08(buf, 0, *(s32*)(s+0x40), arg1); *(v2l*)(s+0x50)=buf[0]; *(v2l*)(s+0x60)=buf[1]; *(v2l*)(s+0x70)=buf[2]; *(v2l*)(s+0x80)=buf[3]; func_00290078(s); }
+
+void func_00167B78(u8* a, s32 b) { func_00167AB0(a, *(s32*)(a+0x160), b, *(s32*)(a+0x168), *(s32*)(a+0x16C)); }
+
+void func_00167BA0(u8* a, s32 b) { func_00167AB0(a, *(s32*)(a+0x160), *(s32*)(a+0x164), b, *(s32*)(a+0x16C)); }
+
+void func_00167BC8(u8* a, s32 b) { func_00167AB0(a, *(s32*)(a+0x160), *(s32*)(a+0x164), *(s32*)(a+0x168), b); }
+
+void func_00167CC0(u8* a, s32 b) { func_00167BF0(a, *(s32*)(a+0x150), b, *(s32*)(a+0x158), *(s32*)(a+0x15C)); }
+
+void func_00167CE8(u8* a, s32 b) { func_00167BF0(a, *(s32*)(a+0x150), *(s32*)(a+0x154), b, *(s32*)(a+0x15C)); }
+
+void func_00167D10(u8* a, s32 b) { func_00167BF0(a, *(s32*)(a+0x150), *(s32*)(a+0x154), *(s32*)(a+0x158), b); }
+
+void func_00167D38(u8* a, s32 v) { *(f32*)((u8*)a + 0x35C) = D_0036BB98; *(s32*)((u8*)a + 0x360) = v; }

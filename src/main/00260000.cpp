@@ -101,3 +101,75 @@ void func_00263080(char *self, char *other)
         func_0011AF60(&D_0047979C, self);
     }
 }
+
+struct Self_260D78 { u8 pad[0xBC]; s32 fBC; };
+
+struct Self_263080 { u8 pad[0x98]; void* f98; };
+
+extern u8 D_0000C0[];
+
+extern void func_0024B330(void*, void*, s32, s32, void*, void*);
+
+extern void func_0012BC20(void*);
+
+extern void func_001748F8(void* self);
+
+extern void func_001746C0(void* self);
+
+extern void func_0027E260(void* self, void* a1);
+
+extern void func_0027E2A8(void* self);
+
+extern void func_0027E660(void* self, s32 a1, s32 a2, s32 a3);
+
+extern u8 D_004BB1F0[];
+
+extern void func_00182D60(void* self, void* a1, void* a2);
+
+extern void func_0027E4C0(void* self, s32 a1, s32 a2, void* a3, s32 a4);
+
+extern void func_0027E228(void* self, s32 a1, s32 a2);
+
+extern void func_001747A0(void* self, void* a1);
+
+extern u32 D_004BADB0;
+
+extern u8 D_002C1420[];
+
+extern u8 D_002C1CF0[];
+
+extern u8 D_0036E340[];
+
+extern u8 D_004BAD10[];
+
+extern u8 D_004BB0B0[];
+
+extern u8 D_004BB0D0[];
+
+extern u8 D_004BB0F0[];
+
+extern u8 D_004BB120[];
+
+extern u8 D_004BB1A0[];
+
+extern u8 D_004BB160[];
+
+extern u8 D_004BADC0[];
+
+extern u8 D_00000100[];
+
+void func_00260020(s32, s32, void* self) ;
+
+void func_002601B8(s32, s32, void* self) ;
+
+void func_00260D78(Self_260D78* self, void* list) ;
+
+void* func_00260558(u8* a, s32 id) ;
+
+void* func_00260640(u8* a, s32 id) ;
+
+void func_00260020(s32, s32, void* self) { func_00182D60(self, D_002C1420, D_002C1CF0); func_001746C0(self); func_0027E2A8(self); func_001747A0(self, D_0036E340); func_0027E228(self, 0, 0); func_0027E4C0(self, 0xC, 7, D_004BAD10, 0xF); func_0027E4C0(self, 0xC, 2, D_004BB0B0, 0x17); func_0027E4C0(self, 0xC, 2, D_004BB0D0, 0x19); func_0027E4C0(self, 0xC, 3, D_004BB0F0, 0x1B); func_0027E4C0(self, 0xC, 4, D_004BB120, 0x1E); func_0027E4C0(self, 0xC, 3, D_004BB1A0, 0x22); func_0027E4C0(self, 0xC, 4, D_004BB160, 0x25); func_0027E228(self, 0x34, 0x1E6); func_0027E260(self, D_0000C0); func_0027E2A8(self); func_0027E660(self, (s32)D_004BADB0, (s32)D_004BADC0, 0); func_0027E2A8(self); func_0027E260(self, D_00000100); func_0027E2A8(self); func_001748F8(self); }
+
+void func_002601B8(s32, s32, void* self) { func_001746C0(self); func_0027E2A8(self); func_0027E660(self, 2, (s32)D_004BB1F0, 0); func_0027E260(self, D_0000C0); func_0027E2A8(self); func_001748F8(self); }
+
+void func_00260D78(Self_260D78* self, void* list) { s32 tmp[5]; func_0024B330(tmp, list, 0x10, 0xA, &tmp[4], &self->fBC); func_0012BC20(tmp); void* object = *(void**)((u8*)self + 0xC); s32 offset = *(s16*)((u8*)object + 0x1C0); object = *(void**)((u8*)object + 0x1C4); ((void (*)(void*))object)((u8*)self + offset); }

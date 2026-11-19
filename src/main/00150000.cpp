@@ -200,3 +200,27 @@ void func_00153F28(s32 arg0) {
     func_00137628(arg0 + 0xF74);
     func_00238568(arg0 + 0x29C);
 }
+
+struct S_1535E0 { u8 pad[0xE68]; s32 flag; };
+
+struct S_00153620 { u8 pad[0x1108]; void* f1108; u8 pad2[4]; s32 f1110; };
+
+extern u8 D_00475480[];
+
+extern void* func_0017E1B8(void*, s32, s32, u8*);
+
+extern u8 D_00353C90[];
+
+extern void func_002BC5A0(void*);
+
+extern void func_00150478(s32, s32);
+
+void func_001535E0(S_1535E0* a0) ;
+
+s32 func_00153620(S_00153620* self) ;
+
+s32 func_00153668(u8* self, s32 a1) ;
+
+void func_00150860(u8* a, s32* b) { void* v = func_0017E1B8(D_00475480, 4, b[0], a); *(s32*)(a + b[1]) = (s32)v; }
+
+void* func_00151A38(u8* s) { func_002BC5A0(s); *(void**)s = &D_00353C90; *(s32*)(s+4)=0; *(s32*)(s+8)=0; *(s32*)(s+0xC)=0; return s; }

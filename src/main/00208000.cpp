@@ -342,3 +342,77 @@ void func_0020BDB0(s32 *arg0) {
 s32 func_0020BEC8(void) {
     return 1;
 }
+
+struct B_271B20 { u8 pad[4]; s32 x4; s32 x8; u8 pad2[0xC]; };
+
+struct State_F43F8 { u8 pad0[0x16C]; s32 x16C; s32 x170; };
+
+extern f32 D_003212DC;
+
+extern void func_00292034(void*, s32, s32);
+
+extern void func_0019A2D0(u8*, s32*);
+
+extern void func_00238980(u8*);
+
+extern void func_00238978(u8*);
+
+extern void func_002936A0(u8*);
+
+extern void func_002B58E8(u8*);
+
+extern void* func_002387A8(u8*, s32);
+
+extern s32 D_0034A69C;
+
+extern u8 D_004CC728[];
+
+extern s32 D_0034A6B8;
+
+extern u8 D_004CCBE8[];
+
+extern s32 D_0036C694;
+
+extern s32 D_0036C674;
+
+extern u8 D_0036C698[];
+
+extern u8* D_00468D00;
+
+extern u8 D_00370AD0[];
+
+extern u8 D_00358E18[];
+
+extern s32 func_001F4430(u8*);
+
+extern void func_001F4438(u8*, s32);
+
+extern void func_001F48A0(u8*, s32, s32);
+
+extern s32 func_0019B6E0(u8*, u8*);
+
+extern void func_0019DC10(u8*, s32);
+
+extern void func_001C21F0(u8*, s32);
+
+extern void func_001C9118(void*, s32);
+
+extern void func_0023AE08(u8*);
+
+extern s32 func_0011AF38(u8*, s32);
+
+extern s32 func_0023B6A0(u8*);
+
+extern s32 func_0023FC90(u8*, s32);
+
+void func_0020B0C0(u8* a) ;
+
+u8* func_00209B60() ;
+
+void func_00208030(u8* s0, u8* s1) ;
+
+u8* func_00209B60() { func_00292034(D_00468D00, 0, 0x10); u8* p = D_00468D00; u8* ret = p; p += 0x10; D_00468D00 = p; return ret; }
+
+s32 func_0020ADE0(u8* a, s32 a1) { *(s32*)((u8*)a + 0x424) = 0; *(s32*)((u8*)a + 0x46C) = 0; *(s32*)((u8*)a + 0x470) = 0; }
+
+void func_0020B0C0(u8* a) { (void)func_0023AE08(a); u8* s = a; (void)func_0011AF38(s+0x134, 8); func_001C9118(s, 1); u32 p = *(u32*)(s+0x3C); if (!(p & 1)) *(u32*)p = (*(u32*)p & 1) | 0xE; else *(u32*)(s+0x3C) = (p & 1) | 0xE; *(s64*)(s+0x128) &= -9; if (*(s32*)(s+0x130) == 1) { (void)func_0023B6A0(s); (void)func_0023FC90(s, 1); } }

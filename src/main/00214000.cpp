@@ -106,3 +106,16 @@ void func_00217938(char* self)
     }
     *(f32*)(self + 0x264) = D_0036BB98;
 }
+
+
+extern void func_001F3D48();
+
+extern s32 func_001F42E8(u8*, ...);
+
+s32 func_00214320(u8* self, s32 a1) ;
+
+s32 func_00214320(u8* self, s32 a1) { if (*(s32*)(self + 0x1B0) == 5 && D_0036BB98 - *(f32*)(self + 0x1B4) <= 3.0f) return 1; return func_001F42E8(self, a1); }
+
+void func_00214820(s32 p0, s32 p1) { func_001F3D48(); *(f32*)((u8*)(p1) + 0x54) = *(f32*)((u8*)(p0) + 0x220); }
+
+void func_00214950(u8* a, s32 v) { u32 n = *(u32*)(a+0x51C); if (n < 0x4) { *(s32*)(a + (n<<2) + 0x520) = v; *(u32*)(a+0x51C) = n + 1; } }

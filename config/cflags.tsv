@@ -4,3 +4,6 @@
 # applies to every file without a row of its own.
 compiler	2.95.3
 default	-O2 -G0 -fno-exceptions -fno-rtti
+src/main/001A4000.cpp	-Os -G0 -fno-exceptions -fno-rtti
+src/main/001FC000.cpp	-Os -G0 -fno-exceptions -fno-rtti
+src/main/0020C000.cpp	-Os -G0 -fno-exceptions -fno-rtti

@@ -154,3 +154,61 @@ void* func_00177BD8(void* self, s32 value)
     }
     return self;
 }
+
+struct S_174828 { u8 pad[0xC]; u8* cur; };
+
+struct S_174000 { u8 pad0[0x4]; u32 f4; u8* begin; u8* cur; };
+
+struct S_00119A38 { u8 pad0[0x30]; u8* ptr30; };
+
+struct S_00175870 { u8 pad0[0x64]; u32 field64; };
+
+struct S_001A2D30 { u8 pad0[0x30]; u8* ptr30; };
+
+extern s32 D_00321188[];
+
+extern u8 D_00350ED0[];
+
+extern u32 D_0036AEAC;
+
+extern u8 D_0035B528[];
+
+extern void func_001D2818(void* self);
+
+extern void func_0013B078(void* self, s32 arg);
+
+extern void* func_001A30A8(void);
+
+extern void func_001D2720(void* self);
+
+extern void func_001748F8(void* self);
+
+extern void func_001746A8(void* self);
+
+extern void func_001744C0(void* self);
+
+extern u32 func_00117BF0(void* a0, u32 a1, u32 a2, u32 a3);
+
+void func_00174600(S_174000* self, void* a1, u32* out1, u32* out2, u32* out3) ;
+
+void func_00174828(S_174828* self) ;
+
+void func_001748B8(S_174828* self) ;
+
+void func_00174550(S_174000* self, u32* out1, u32* out2) ;
+
+void func_00174538(s32 p0, s32 p1, s32 p2) { *(s32*)((u8*)(p0) + 0x4) = p2; *(s32*)((u8*)(p0) + 0xC) = p2; *(s32*)((u8*)(p0) + 0x0) = (p2 + (p1 << 4)); }
+
+void func_00174550(S_174000* self, u32* out1, u32* out2) { func_001748F8(self); func_001746A8(self); if (out1) *out1 = ((u32)(self->cur - (u8*)self->f4)) >> 4; if (out2) *out2 = self->f4; func_001744C0(self); }
+
+void func_00174600(S_174000* self, void* a1, u32* out1, u32* out2, u32* out3) { func_001748F8(self); func_001746A8(self); u32 n = ((u32)(self->cur - (u8*)self->f4)) >> 4; if (out1) *out1 = n; if (out2) *out2 = self->f4; if (out3) *out3 = func_00117BF0(a1, n << 4, self->f4, 4); func_001744C0(self); }
+
+void func_00174828(S_174828* self) { func_001748F8(self); u8* p = self->cur; self->cur = p + 0x10; *(u64*)p = 0x60000000ULL; *(u64*)(p + 8) = 0; }
+
+void func_001748B8(S_174828* self) { func_001748F8(self); u8* p = self->cur; self->cur = p + 0x10; *(u64*)p = 0x70000000ULL; *(u64*)(p + 8) = 0; }
+
+s32 func_00175098(s32 i) { return *(s32*)((u8*)D_00321188 + (i << 2)); }
+
+void* func_001750E8(s32 i) { extern u8 D_003211C0[]; if (i == -1) return 0; return D_003211C0 + (i<<3); }
+
+void func_00175870(S_00175870* self, s32 arg) { D_0036AEAC = self->field64; if (arg & 1) func_001D2818(self); }

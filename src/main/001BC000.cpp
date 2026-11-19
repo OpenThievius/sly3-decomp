@@ -178,3 +178,15 @@ void func_001BFFD8(s32 arg0, s32 arg1) {
         }
     }
 }
+
+extern void func_001B77F8(u8*,s32,s32);
+
+extern void func_001B7268(u8*,s32,s32,s32,f32);
+
+typedef long long v2l __attribute__((vector_size(16)));
+
+extern void func_001BD8D8(s32, s32);
+
+void func_001BD6C8(u8* s) { if (*(s32*)(s+0x1C)==0x12) func_001B7268(s,3,0,0,1.0f); else func_001B77F8(s,6,0); }
+
+void func_001BFAC0(u8* a, v2l v1, v2l v2) { *(v2l*)(a+0x30)=v1; *(v2l*)(a+0x40)=v2; }

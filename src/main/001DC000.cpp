@@ -71,3 +71,7 @@ void func_001DC8D8(s32 arg0, s32 arg1) {
 void func_001DCA10(void) {
     func_001DC8D8(1, 0xFFFF);
 }
+
+extern void func_0023AE08(void*);
+
+void func_001DC6C0(u8* s) { func_0023AE08(s); s64 v = *(s64*)(s+0x128); *(s64*)(s+0x128) = v & -9; }

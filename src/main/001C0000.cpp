@@ -205,3 +205,56 @@ void func_001C3CD0(s32 *arg0) {
     }
     func_001C21F0(arg0, 9);
 }
+
+
+struct State_F43F8 { u8 pad0[0x16C]; s32 x16C; s32 x170; };
+
+struct List_C0370 { s32 x0; s32 x4; s32 x8; };
+
+struct Obj_1495F8 { u8 pad[0x108C]; void* f108C; };
+
+struct Obj_15CF38 { u8 pad[0x28]; u64 flags; };
+
+struct List_15AE18 { s32 x0, x4, x8, xC; };
+
+struct Obj_15AE18 { u8 pad[0x3DE8]; List_15AE18 list; };
+
+struct List_15B728 { s32 x0, x4, x8, xC; };
+
+struct Obj_15B728 { u8 pad[0x3E50]; List_15B728 list; };
+
+struct Node_23DCA0 { u8 pad[0x70]; u64 flags; };
+
+struct Self_23DCA0 { u8 pad[0xDC]; Node_23DCA0* node; };
+
+extern void func_001F43D0(u8*, s32);
+
+extern s32 func_001F4430(u8*);
+
+extern void func_001F4438(u8*, s32);
+
+extern void func_001F48A0(u8*, s32, s32);
+
+extern void func_001F48F8();
+
+extern s32 func_0019B6E0(u8*, u8*);
+
+extern void func_0019DC10(u8*, s32);
+
+extern s32 func_0013B500(u8*, s32);
+
+extern u8 D_0036C668[];
+
+extern u8 D_00479BBC[];
+
+extern u8 D_00479944[];
+
+extern u8 D_00479950[];
+
+void func_001C3AE8(u8* self) ;
+
+void func_001C3CD0(u8* self) ;
+
+struct P { u64 x; } __attribute__((packed));
+
+void func_001C2E58(u8* a, P v) { *(P*)(a+0xC) = v; }

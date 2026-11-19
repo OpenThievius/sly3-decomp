@@ -307,3 +307,8 @@ void func_0012F6B0(void* pobject)
 {
     *(int*)((char*)pobject + 0x70) = 0;
 }
+
+
+typedef long long v2l __attribute__((vector_size(16)));
+
+void func_0012F4C8(u8* a, u8* b, u8* c) { if (b) *(v2l*)b = *(v2l*)(a+0x20); if (c) { *(s32*)(c+8)=0; *(s32*)(c+4)=0; *(s32*)(c+0)=0; } }

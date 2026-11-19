@@ -143,3 +143,23 @@ void func_001FBF08(s32 arg0) {
         func_001FBE30(arg0, 1);
     }
 }
+
+extern void func_002936C0(void* a0);
+
+extern void func_002936E0(void* a0);
+
+extern void* D_00467BE4;
+
+extern void* D_00467BE8;
+
+extern s32 D_0036AEB0;
+
+extern void func_001F7700(void*, s32);
+
+extern void func_001FBB08(s32, s32);
+
+void func_001F8260(u8* a) { func_001F7700(a, 0); }
+
+void func_001F9868() { func_002936C0(D_00467BE4); func_002936E0(D_00467BE8); D_0036AEB0 = 0; }
+
+void func_001FB508(s32 p0) { func_001FBB08(p0, 0x2); }

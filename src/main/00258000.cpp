@@ -224,3 +224,51 @@ void func_0025A4D0(s32 arg0, s32 arg1) {
 void func_0025A608(void) {
     func_0025A4D0(1, 0xFFFF);
 }
+
+struct S_259 { u8 pad[4]; s32 f4; u8 pad2[4]; s32 fC; };
+
+extern void func_00259CA8(void* self, s32 state);
+
+extern void func_001D2818(void* self);
+
+extern void func_0025A400(void* self);
+
+extern u8 D_00475480[];
+
+struct S_1EE9 { void* f0; void* f4; char pad[0x18]; };
+
+extern f32 D_003212DC;
+
+extern s32 func_0013B500(void* a0, s32 a1);
+
+extern void func_001F48F8(void* a0);
+
+extern s32 func_001F4430(void* a0);
+
+extern void func_001F4438(void* a0, s32 a1);
+
+extern s32 func_001F43C8(void* a0);
+
+extern s32 func_001F43D0(void* a0, s32 a1);
+
+extern s32 func_0023E178(void* a0, void* a1);
+
+extern void func_001F4A80(void* a0);
+
+extern void func_00165B28(void* a0);
+
+extern s32 func_0025CDD0(void* a0, void* a1);
+
+extern s32 func_0025CEC8(void* a0, void* a1);
+
+extern s32 func_0013CD00(s32 a0, s32 a1);
+
+s32 func_00259B78(void* a0, void* a1) ;
+
+void func_00259A08(S_259* self) { self->f4 = -1; func_00259CA8(self, 0); self->fC = 0; }
+
+s32 func_00259B78(void* a0, void* a1) { if ((*(u64*)((char*)a1 + 0x18) & 0x10000) != 0 && func_0013B500(*(void**)((char*)a1 + 4), 0x65) != 0) { return 1; } return func_0025CEC8(a0, a1); }
+
+void func_00259D10(S_259* self) { if (self->fC == 0) { func_00259CA8(self, 0); } self->fC = self->fC + 1; }
+
+void func_0025A288(u8* self, s32 arg) { func_0025A400(self); if (arg & 1) func_001D2818(self); }

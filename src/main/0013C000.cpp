@@ -231,3 +231,29 @@ void func_0013F970(void* p, s32 v)
         *(f32*)((char*)p + 0x18f4) = D_0036BB98;
     }
 }
+
+struct State_F43F8 { u8 pad0[0x16C]; s32 x16C; s32 x170; };
+
+extern s32 func_001F43C8(u8*);
+
+extern void func_001F43D0(u8*, s32);
+
+extern s32 func_001F4430(u8*);
+
+extern void func_001F4438(u8*, s32);
+
+extern void func_001F48A0(u8*, s32, s32);
+
+extern void func_001F48F8();
+
+extern s32 func_0019B6E0(u8*, u8*);
+
+extern void func_0019DC10(u8*, s32);
+
+extern void func_001C21F0(u8*, s32);
+
+extern s32 func_0013B500(u8*, s32);
+
+void func_0013D108(u8* a0, s32 a1, s32 a2) ;
+
+void func_0013D108(u8* a0, s32 a1, s32 a2) { s32 r1 = func_001F43C8(a0); func_001F43D0(a0, r1 + a1); s32 r2 = func_001F4430(a0); func_001F4438(a0, r2 + a2); func_001F48A0(a0, a1, a2); }

@@ -203,3 +203,34 @@ void func_0022F350(s32 arg0) {
 }
 
 s32 func_0022FC08(char* self) { s32 value = -1; char* p = *(char**)(self + 0x16C); if (p != 0) { value = *(s32*)(p + 0x4C); } return value; }
+
+struct Quad_22F638 { s32 a, b, c, d; } __attribute__((aligned(16)));
+
+extern f32 func_00231240(s32, f32);
+
+extern s32 func_0022F450(s32, s32);
+
+extern void func_00231078(s32, s32, s32);
+
+extern void func_0028FE20();
+
+struct Self_22D740 { u8 pad0[0x16C]; s32 x16C; };
+
+extern void func_0022C030(s32, s32);
+
+extern f32 D_003212DC;
+
+
+extern u8 D_00326DA8[];
+
+void* func_0022D070() { return &D_00326DA8; }
+
+void func_0022D740(Self_22D740* self) { func_0028FE20(); if (self->x16C) { self->x16C = 0; func_0022F450((s32)self, 0); } }
+
+void func_0022F540(s32 a0, s32 a1) { func_00231078(func_0022F450(a0, 1), 0, a1); }
+
+void func_0022F578(s32 a0, s32 a1) { func_00231078(func_0022F450(a0, 1), 1, a1); }
+
+f32 func_0022F600(s32 a0, f32 f) { return func_00231240(func_0022F450(a0, 1), f); }
+
+void func_0022F638(s32 a0, Quad_22F638* src) { Quad_22F638 tmp = *src; *(Quad_22F638*)func_0022F450(a0, 1) = tmp; }
