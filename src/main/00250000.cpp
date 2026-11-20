@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
-
 s32 func_002506C8(s32, s32);
 s32 func_00150690(s32, s32, s32, s32);
 extern s32 D_00475470;
@@ -13,6 +12,16 @@ extern s32 D_00479B5C;
 s32 func_00252D80(void *);
 void *func_002554C0(s32, void *);
 
+extern void func_00254BB8(u8*, s32);
+extern void func_00253728(u8*,s32,s32,s32,u8*);
+extern void func_00253690(u8*,s32,s32,s32,u8*);
+extern void func_0024B330(void*, void*, s32, s32, void*, void*);
+extern void func_0012BC20(void*);
+extern void func_00252B60(void*, s32, void*);
+void* func_00252D80(void* self, void* list) ;
+void func_002537F0(u8* a, s32 p1, s32 p2, s32 p3);
+void func_00253830(u8* a, s32 p1, s32 p2, s32 p3);
+void func_00253690(s32 a0, u32 a1, s32 a2, s32 a3, u8* a4);
 void func_002502E8(void) {
 
 }
@@ -94,3 +103,9 @@ void func_002539A0(s32 arg0)
     func_00253950(arg0, arg0 + 0xAE0);
     func_00253950(arg0, arg0 + 0xC80);
 }
+
+
+void* func_00252D80(void* self, void* list) { void* arr[16]; s32 tmp[4]; s32 counter; func_0024B330(tmp, list, 0x100F, 0x10, &counter, arr); func_00252B60(self, counter, arr); func_0012BC20(tmp); return self; }
+void func_00253690(s32 a0, u32 a1, s32 a2, s32 a3, u8* a4) { u32 bit = 1; for (int i = 0; i < 26; i++) { if (a1 & bit) { func_00254BB8(a4, a0); *(s32*)(a4 + 4) = a2; *(s32*)(a4 + 0xC) = a3; } bit <<= 1; a4 += 16; } }
+void func_002537F0(u8* a, s32 p1, s32 p2, s32 p3) { func_00253728(a, p1, p2, p3, a+0xE20); }
+void func_00253830(u8* a, s32 p1, s32 p2, s32 p3) { func_00253728(a, p1, p2, p3, a+0xC80); }

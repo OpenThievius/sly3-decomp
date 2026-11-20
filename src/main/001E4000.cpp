@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
-
 s32 func_0023AE08();
 s32 func_00240E58(s32, s32, s32);
 s32 func_0011B028(s32 *, s32);
@@ -32,6 +31,26 @@ extern s32 D_004D2D60;
 extern s32 D_004D2E38;
 extern s32 D_004D2F10;
 
+struct Self_1E7EF0 { u8 pad[0x1C8]; void* f1C8; };
+extern void func_001E73D8(void*);
+extern s32 func_0011B0C0(void*,void*);
+extern void* func_001E5F60(void*,s32);
+extern void func_0011AF60(void*,void*);
+extern void func_0011B028(void*,void*);
+extern void* func_001D2538(s32* a);
+extern void func_0022D780(void*);
+extern void* func_001D25B0(void*);
+void func_001E5D30(u8* a, u8* b) ;
+void func_001E5E10(u8* a, s32 b) ;
+void func_001E5EF8(u8* a, u8* b, u8* c) ;
+void func_001E6238(u8* s) ;
+void func_001E7EF0(Self_1E7EF0* self, void* item);
+void func_001E5D00(u8* a, u8* b);
+void func_001E5CD0(u8* a, u8* b);
+void func_001E5C10(u8* a, u8* b);
+void func_001E5CA0(u8* a, u8* b);
+void func_001E5C40(u8* a, u8* b);
+void func_001E5C70(u8* a, u8* b);
 void func_001E4B10(s32 arg0, s32 arg1) {
     s32 temp_v0;
     s32 temp_v0_2;
@@ -198,3 +217,16 @@ void func_001E73D8(char *self) {
         *(s32 *)(self + 0x1CC) = 0;
     }
 }
+
+
+void func_001E5C10(u8* a, u8* b) { void* p = func_001E5F60(a, 6); *(void**)((u8*)p+4) = b; }
+void func_001E5C40(u8* a, u8* b) { void* p = func_001E5F60(a, 0x7); *(void**)((u8*)p+0x4) = b; }
+void func_001E5C70(u8* a, u8* b) { void* p = func_001E5F60(a, 0x8); *(void**)((u8*)p+0x4) = b; }
+void func_001E5CA0(u8* a, u8* b) { void* p = func_001E5F60(a, 0x9); *(void**)((u8*)p+0x4) = b; }
+void func_001E5CD0(u8* a, u8* b) { void* p = func_001E5F60(a, 0xA); *(void**)((u8*)p+0x4) = b; }
+void func_001E5D00(u8* a, u8* b) { void* p = func_001E5F60(a, 0xB); *(void**)((u8*)p+0x4) = b; }
+void func_001E5D30(u8* a, u8* b) { void* p = func_001E5F60(a, 0); *(void**)((u8*)p+4) = b; }
+void func_001E5E10(u8* a, s32 b) { if (b == -1) b = *(s32*)(a + 0x18); void* p = func_001E5F60(a, 1); *(s32*)((u8*)p+4) = b; }
+void func_001E5EF8(u8* a, u8* b, u8* c) { void* p = func_001E5F60(a, 0xC); s32 local[2]; local[0] = 0x8; local[1] = 0x10; void* q = func_001D25B0(local); *(void**)((u8*)p+4) = q; *(void**)q = b; *(void**)((u8*)*(void**)((u8*)p+4)+4) = c; }
+void func_001E6238(u8* s) { func_0022D780(s); s32 v = (*(s32*)(s+0xD8) << 4) - 0x10; s32 local[2]; local[1]=0x10; local[0]=v; void* p = func_001D2538(local); *(void**)(s+0x1DC) = p; }
+void func_001E7EF0(Self_1E7EF0* self, void* item) { self->f1C8 = item; func_0011AF60((char*)item + 0x1B4, self); func_001E73D8(self); void* list = &D_0047A26C; if (func_0011B0C0(list, self) != 0) func_0011B028(list, self); }

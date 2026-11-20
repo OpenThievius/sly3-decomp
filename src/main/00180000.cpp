@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
-
 s32 func_0017FFD0(s32, s32);
 s32 func_00180460(s32, s32);
 s32 func_00238978();
@@ -32,6 +31,31 @@ s32 func_0027E190(s32 *);
 extern s32 D_0036C2E0;
 extern s32 D_0036C308;
 
+extern s32 func_00271B20(s32, s32);
+extern void func_00293380(s32, void*, s32);
+extern void func_00293DF8(s32);
+extern void func_00294260(s32, s32);
+extern void func_0018DE80(void);
+extern s32 D_0036C684;
+extern s32 D_0036C688;
+extern s32 D_0036C658;
+extern s32 D_0036C668;
+extern s32 D_00349F8C;
+extern void func_00252E40(void*, s32);
+extern void func_00238970(void*);
+extern void func_00292034(void*, s32, s32);
+extern s32 D_0036C694;
+extern s32 D_0036C674;
+extern u8 D_0036C698[];
+extern void func_001C7340(void*);
+extern void func_0011AF38(void*, s32);
+extern void func_001C9118(void*, s32);
+void func_00183D80(u8* self) ;
+void func_00183000() ;
+struct P { u32 x; } __attribute__((packed));
+void func_00181F30(u8* s);
+void func_00182BE0(void);
+void func_001813E8(u8* a, u8* b);
 void func_00180108(void) {
     func_0017FFD0(1, 0xFFFF);
 }
@@ -295,3 +319,10 @@ void func_00183C10(s32 arg0, s32 arg1) {
 void func_00183D60(void) {
     func_00183C10(1, 0xFFFF);
 }
+
+
+void func_001813E8(u8* a, u8* b) { *(P*)(a+0x16C) = *(P*)b; *(P*)(a+0x164) = *(P*)(a+0x16C); }
+void func_00181F30(u8* s) { func_00238970(s); func_00252E40(*(void**)(s+0x10), 0x2D); *(s32*)(s+0x30) = -1; }
+void func_00182BE0(void) { func_00293380(5, (void*)func_0018DE80, 0); func_00293DF8(5); D_0036C684 = func_00271B20(0, 2); D_0036C688 = func_00271B20(2, 2); func_0011AF38(&D_0036C658, 0x444); func_0011AF38(&D_0036C668, 0x1090); func_00294260(D_00349F8C, 0); }
+void func_00183000() { func_00292034(D_0036C698, 0, 0x3C); D_0036C694 = 0; D_0036C674 = 0; }
+void func_00183D80(u8* self) { func_001C7340(self); *(f32*)(self + 0x50) = 50.0f; *(f32*)(self + 0x58) = 100.0f; *(f32*)(self + 0x60) = 2000.0f; func_001C9118(self, 1); s32 f = *(s32*)(self + 0x3C); if (!(f & 1)) { *(s32*)f |= 0xA; } else { *(s32*)(self + 0x3C) = f | 0xA; } }

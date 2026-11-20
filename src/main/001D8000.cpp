@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
-
 s32 func_001D8B40(s32, s32);
 s32 func_00238980();
 s32 func_001D9940(s32);
@@ -24,6 +23,21 @@ s32 func_001DB3B8(s32, s32, s32);
 s32 func_001DB490(s32);
 s32 func_001DC430(s32, s32);
 
+struct S_001D8BA8 { u8 pad0[0xB0]; s32 xB0; f32 xB4; u8 padB8[0x18]; f32 xD0; };
+extern void func_001D8008(void* a0);
+struct T_001DA860 { u8 pad0[0x10F4]; s32 x10F4; };
+struct S_001DA860 { u8 pad0[0x10]; void* x10; };
+extern s32 func_00238AD8(s32 a0);
+extern void func_00256DF0(void* a0);
+extern void func_001EE878(u32,u8*,f32);
+extern void func_00252E40(void*,s32);
+extern void func_00238970(void*);
+void func_001D8BA8(S_001D8BA8* a0);
+void func_001D99B0(u8* s);
+void func_001D8008(u8* s);
+void func_001D9CA8(u8* s);
+void func_001DA438(u8* s);
+s32 func_001DA860(S_001DA860* a0, s32 a1, s32 a2);
 void func_001D8110(s32 arg0) {
     func_00238980();
     func_001D8B40(arg0, 0);
@@ -182,3 +196,11 @@ s32 func_001DB698(s32 a0, s32 a1, s32 a2)
 s32 func_001DB6D0(void) {
     return 1;
 }
+
+
+void func_001D8008(u8* s) { func_00238970(s); *(f32*)(s+0x34) = -1.0f; *(f32*)(s+0x44) = 100.0f; *(f32*)(s+0x48) = 25.0f; *(f32*)(s+0x4C) = 60.0f; *(s32*)(s+0x3C) = -1; *(s32*)(s+0x80) = 1; }
+void func_001D8BA8(S_001D8BA8* a0) { func_001D8008(a0); a0->xB0 = 0xE; a0->xB4 = 1.0f; a0->xD0 = 1.5f; }
+void func_001D99B0(u8* s) { u32 x = (*(u32*)(s+0x34)<<5) + 0x50; func_001EE878(*(u32*)(s+0x30) + x, *(u8**)(s+0x10), 25.0f); }
+void func_001D9CA8(u8* s) { func_00238970(s); func_00252E40(*(void**)(s+0x10), 0x3E); *(s32*)(s+0x50) = -1; }
+void func_001DA438(u8* s) { func_00238970(s); *(s32*)(s+0x30) = -1; *(f32*)(s+0x38) = 1.0f; func_00252E40(*(void**)(s+0x10), 0x2F); }
+s32 func_001DA860(S_001DA860* a0, s32 a1, s32 a2) { if (a1 == 1) { T_001DA860* p = (T_001DA860*)a0->x10; if (p->x10F4 == a2) { func_00256DF0(p); return 1; } } return func_00238AD8((s32)a0); }

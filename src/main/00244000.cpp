@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
-
 s32 func_00244A10(s32, s32);
 s32 func_00245A30(s32, s32);
 s32 func_00245FA0(s32);
@@ -16,6 +15,12 @@ s32 func_00291CE8(s32, s32, s32, s32, s32, s32, s32);
 extern s32 D_00475024;
 extern s32 D_00349850;
 
+extern void func_0011E118(void*);
+extern void func_002B8670(void*);
+extern u8 D_00365D50[];
+u8* func_00244BC8(u8* a);
+void func_00246B70();
+void func_00245FA0();
 void func_00244B48(void) {
     func_00244A10(1, 0xFFFF);
 }
@@ -146,3 +151,8 @@ s32 func_00246F30(void* self, u32 index)
 void func_00247EC0(void) {
 
 }
+
+
+u8* func_00244BC8(u8* a) { func_002B8670(a); *(void**)(a+0xC) = &D_00365D50; *(f32*)(a+0x10) = 1.0f; *(f32*)(a+0x48) = 1.0f; *(f32*)(a+0x30) = 300.0f; *(f32*)(a+0x34) = 3000.0f; return a; }
+void func_00245FA0() { func_0011E118(&D_0047500C); }
+void func_00246B70() { func_0011E118(&D_00475024); }

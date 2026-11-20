@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
-
 struct Obj_00130218 { u8 pad[0x1C]; void* value; };
 extern void* func_0012FFB0(s32, void*, void*, void*, s32);
 extern void func_0028ECE0(void*, void*, void*);
@@ -36,6 +35,21 @@ s32 func_00238978();
 s32 func_0012FFB0(s32, s32, s32, s32, s32);
 s32 func_0028ECE0(s32, s32, s32);
 
+struct Foo { char a[0x8]; u32 f8; char b[0x10]; void* f1C; char c[0x8]; void* f28; };
+extern void func_00131770(void*);
+extern void func_00131610(void*,s32);
+extern void func_00238980(void*);
+extern void func_00252E40(void*,s32);
+extern void func_00238970(void*);
+extern void func_00131568();
+extern void func_00238970();
+extern void func_00169C90(void* a0, u32 a1, u32 a2);
+extern u8 D_00351570[];
+Foo* func_00130CD0(Foo* self, u32 a1, u32 a2, void* a3) ;
+void func_00133A58(u8* s);
+void func_00131568(s32 p0);
+void func_00131770(u8* s);
+void func_00131B80(s32 p0);
 s32 func_00130010(s32 arg0, s32 arg1, s32 arg2) {
     s32 temp_v0;
 
@@ -163,3 +177,10 @@ void func_00134950(void* self,s32 type,void* data)
  if(type==10 && *(s32*)((u8*)data+8)==0x2AA && *(s32*)((u8*)self+0x30)==3) func_00134AE0(self);
  func_00238AD8(self,type,data);
 }
+
+
+Foo* func_00130CD0(Foo* self, u32 a1, u32 a2, void* a3) { func_00169C90(self, a1, a2); self->f1C = &D_00351570; self->f8 = 5; *(void**)((char*)self + 0x20) = a3; return self; }
+void func_00131568(s32 p0) { func_00238970(); *(s32*)((u8*)(p0) + 0x3C) = 0; *(s32*)((u8*)(p0) + 0x30) = -0x1; }
+void func_00131770(u8* s) { func_00238980(s); func_00131610(s, 1); func_00252FC0(*(s32*)(s+0x10), *(s32*)(s+0x3C)); }
+void func_00131B80(s32 p0) { func_00131568(); *(s32*)((u8*)(p0) + 0x3C) = 0x2; }
+void func_00133A58(u8* s) { func_00238970(s); func_00252E40(*(void**)(s+0x10), 0x43); *(s32*)(s+0x30) = -1; }

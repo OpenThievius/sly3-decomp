@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
-
 s32 func_001D45B0();
 s32 func_001D3AE8(s32 *);
 extern s32 D_0046F550;
@@ -46,6 +45,27 @@ extern s32 D_0046FC30;
 extern s32 D_0046FD00;
 extern s32 D_00475480;
 
+struct S_1D5540 { u8 pad[0x1C]; s32 flag; };
+typedef long long v2l __attribute__((vector_size(16)));
+extern void func_001D6BB8(u8* self);
+extern void* func_0017E1B8(void*, s32, s32, u8*);
+extern void func_0011C8C0(void*, v2l);
+extern v2l D_00317550;
+extern void func_0023EDE8(s32, s32, s32);
+extern u8 D_00345B00[];
+extern u8 D_00345CA0[];
+extern void func_001D3818(u8*, s32, u8*);
+extern u8 D_0036C700[];
+extern u8 D_004794C4[];
+extern void func_001854C8(u8*, s32, void*);
+extern void func_00187040(void*);
+void func_001D5540(S_1D5540* a0) ;
+void func_001D51D8(u8* self) ;
+void func_001D52D0(u8* self) ;
+void func_001D6F28(u8* self);
+void* func_001D6980(u8* a, s32 b);
+void func_001D5E88(s32 p0);
+void func_001D6608(u8* s, f32 x);
 s32 func_001D47C0(void) {
     return func_001D45B0() == 0x57;
 }
@@ -225,3 +245,12 @@ s32 func_001D7F90(char* self)
     }
     return result;
 }
+
+
+void func_001D51D8(u8* self) { func_001D3818((u8*)&D_0046F550, 2, D_00345B00); if (self) *(s32*)(self + 0x1C) |= 2; }
+void func_001D52D0(u8* self) { func_001D3818((u8*)&D_0046F550, 2, D_00345CA0); if (self) *(s32*)(self + 0x1C) |= 2; }
+void func_001D5540(S_1D5540* a0) { func_001854C8(D_0036C700, 0x3C, 0); func_00187040(*(void**)D_004794C4); if (a0) a0->flag |= 2; }
+void func_001D5E88(s32 p0) { func_0023EDE8(p0, p0 + 0x1C0, p0 + 0x1F0); }
+void func_001D6608(u8* s, f32 x) { *(f32*)(s+0x1B8)=x; v2l buf[3]; func_0011C8C0(buf, D_00317550); *(v2l*)(s+0x1C0)=buf[0]; *(v2l*)(s+0x1D0)=buf[1]; *(v2l*)(s+0x1E0)=buf[2]; }
+void* func_001D6980(u8* a, s32 b) { void* p = func_0017E1B8((u8*)&D_00475480, 1, b, a); if (p != 0) { void* v = *(void**)((u8*)p+0xC); s32 off = *(s16*)((u8*)v+0x48); v = *(void**)((u8*)v+0x4C); ((void (*)(void*))v)((u8*)p+off); } return p; }
+void func_001D6F28(u8* self) { func_001D6BB8(self); *(f32*)(self + 0x250) = 2000.0f; *(f32*)(self + 0x254) = 5000.0f; *(s32*)(self + 0x244) = 0; }
