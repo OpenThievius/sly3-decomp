@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
-
 void func_0025EE50(s32,s32);
 s32 func_002717E0();
 s32 func_0027ED60(s32 *, s32);
@@ -10,6 +9,7 @@ s32 func_00150630(s32 *, s32);
 s32 func_00271730(s32, s32);
 extern s32 D_0046F788;
 extern s32 D_00475480;
+struct State_25F098 { u8 pad[0x4F58]; s32 x4F58; s32 x4F5C; };
 s32 func_0025D478(s32, s32, s32, s32, s32, s32);
 s32 func_0011E100(s32 *, s32, s32, s32);
 s32 func_0025A628(s32 *);
@@ -28,6 +28,31 @@ extern s32 D_004D2D60;
 extern s32 D_004D2E38;
 extern s32 D_004D2F10;
 
+extern void* func_001F4AD0(u8*, s32);
+extern u8 D_00327EE8[];
+extern u8 D_00327EF0[];
+extern s32 func_0029CF10(f32);
+extern u8 D_00327ED0[];
+extern void func_00271448(u8*, u8*, s32);
+extern void func_00271448(u8*, u8*, u8*, u8*, s32);
+extern void func_00271448(u8*, u8*, void*);
+extern s32 func_0013B500(u8*, s32);
+extern s32 func_001852E0(u8*);
+extern u8 D_0036C700[];
+extern void func_00271448(u8*, u8*, u8*, u8*);
+extern void func_00271448(u8*, u8*, s32, s32, s32);
+extern void func_00271448(u8*, u8*, s32, s32);
+extern u8 D_00327ED8[];
+extern void func_002717E0(u8*, u8*);
+extern void* func_0017E1B8(void*, s32, s32, u8*);
+extern void func_0025EA08(void*,void*,void*);
+void func_0025EAC0(u8* a0, u8* a1);
+void func_0025F0E8(u8* a0, s32 a1, u8* a2);
+void func_0025EAE0(u8* a0, u8* a1);
+void func_0025F1D8(u8* a0);
+void func_0025EAA0(u8* a0, u8* a1);
+s32 func_0025F098(u8* a0);
+void func_0025DD00(u8* a);
 void func_0025D3F8(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
     s32 var_s0;
     s32 var_s1;
@@ -132,3 +157,12 @@ void func_0025F5C0(s32 arg0) {
 void func_0025F5E8(s32 arg0) {
     func_00271730(arg0, func_00150630(&D_00475480, D_0046F788));
 }
+
+
+void func_0025DD00(u8* a) { *(s32*)(a+0x4E4C) = (s32)func_0017E1B8(a, 5, 0x6F1, 0); }
+void func_0025EAA0(u8* a0, u8* a1) { func_0025EA08(a0, a1, a0 + 0x463C); }
+void func_0025EAC0(u8* a0, u8* a1) { func_0025EA08(a0, a1, a0 + 0x4640); }
+void func_0025EAE0(u8* a0, u8* a1) { func_0025EA08(a0, a1, a0 + 0x4644); }
+s32 func_0025F098(u8* a0) { u8 buf[0x20]; func_00271448(buf, D_00327ED8, ((State_25F098*)&D_00475480)->x4F58, ((State_25F098*)&D_00475480)->x4F5C); func_002717E0(a0, buf); }
+void func_0025F0E8(u8* a0, s32 a1, u8* a2) { s32 result; if (func_0013B500(a2, 0xA7)) result = *(s32*)(a2 + 0x120); else result = func_001852E0(D_0036C700); u8 buf[0x20]; func_00271448(buf, D_00327ED0, result); func_002717E0(a0, buf); }
+void func_0025F1D8(u8* a0) { f32 f; u8 buf[0x20]; void* obj = func_001F4AD0((u8*)&D_00475480, 0); if (obj && func_0013B500((u8*)obj, 0x33)) { s32 mode = *(s32*)((u8*)obj + 0xF78); switch (mode) { case 0: f = *(f32*)(*(u8**)((u8*)obj + 0x1004) + 0x3C) * *(f32*)((u8*)obj + 0xF94); break; case 1: f = *(f32*)(*(u8**)((u8*)obj + 0x1008) + 0xC4) * *(f32*)((u8*)obj + 0xF94); break; } if (func_0013B500((u8*)obj, 0x34)) { func_00271448(buf, D_00327EE8, (s32)f); func_002717E0(a0, buf); return; } if (func_0013B500((u8*)obj, 0x36)) { u8* fmt = D_00327EF0; s32 r = func_0029CF10(f); func_00271448(buf, fmt, r); func_002717E0(a0, buf); } } }

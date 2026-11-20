@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
-
 void func_00168E88(s32,s32);
 void func_00169558(s32,s32);
 void func_00169AA0(s32,s32);
@@ -31,6 +30,29 @@ s32 func_002B50F8(s32 *);
 s32 func_002BC7D0(s32 *, s32);
 extern s32 D_0036BC10;
 
+struct Obj_169F60 { u8 pad0[0x8]; s32 x8; u8 padC[0x1C-0xC]; u8* x1C; s32 x20; u8 pad24[0x3C-0x24]; f32 x3C; u8 pad40[0x48-0x40]; s32 x48; s32 x4C; };
+typedef long long v2l __attribute__((vector_size(16)));
+struct Foo { char a[0x8]; u32 f8; char b[0x10]; void* f1C; char c[0x8]; void* f28; };
+struct Big { char a[0x8]; u32 f8; char b[0x10]; void* f1C; char c[0x140]; void* f160; };
+extern void func_001679E0(u8*,f32);
+extern void func_00169E28(void*);
+extern void func_001FC968(void*);
+extern void func_0016AE90(u8*);
+extern void func_00169C90(void* a0, u32 a1, u32 a2);
+extern u8 D_00355CC8[];
+extern u8 D_00355CA0[];
+extern u8 D_00355D40[];
+extern u8 D_00355D18[];
+extern u8 D_00355CF0[];
+Big* func_0016B5E8(Big* self, u32 a1, u32 a2) ;
+Foo* func_0016BF10(Foo* self, u32 a1, u32 a2, void* a3) ;
+Obj_169F60* func_00169F60(Obj_169F60* self, s32 a1, s32 a2, s32 a3) ;
+void* func_0016A6F0(void* self, u32 a1, u32 a2) ;
+void* func_0016B180(void* self, u32 a1, u32 a2, void* a3, void* a4) ;
+void func_0016AE40(u8* s, v2l a, v2l b, f32 f) ;
+void func_0016BF60(u8* s);
+void* func_001694C0(u8* a, s32 v);
+void func_001697A0(u8* s);
 void func_00168948(void* self, s32 value)
 {
     *(s32*)((char*)self + 0xDC) = value;
@@ -290,3 +312,14 @@ void func_0016AE88(void* self, f32 value)
 {
     *(f32*)((char*)self + 0x28) = value;
 }
+
+
+void* func_001694C0(u8* a, s32 v) { if (v == 1) *(s32*)((u8*)a + 0xD8) = v; return a; }
+void func_001697A0(u8* s) { extern f32 D_00320E50; func_001FC968(s); *(f32*)(s+0x144) = D_00320E50; }
+Obj_169F60* func_00169F60(Obj_169F60* self, s32 a1, s32 a2, s32 a3) { func_00169C90(self, a1, a2); self->x1C = D_00355D40; self->x20 = a3; self->x8 = 3; self->x3C = 7.0f; self->x48 = 0; self->x4C = 0; return self; }
+void* func_0016A6F0(void* self, u32 a1, u32 a2) { func_00169C90(self, a1, a2); *(void**)((u8*)self + 0x1C) = D_00355D18; *(u32*)((u8*)self + 0x8) = 4; *(f32*)((u8*)self + 0xC4) = 7.0f; *(f32*)((u8*)self + 0x28) = -1.0f; *(u32*)((u8*)self + 0xD0) = 0; *(u32*)((u8*)self + 0xD4) = 0; return self; }
+void func_0016AE40(u8* s, v2l a, v2l b, f32 f) { *(v2l*)(s+0x90)=a; *(v2l*)(s+0xA0)=b; *(f32*)(s+0xB0)=f; if (*(s32*)(s+0x50)==0) func_0016AE90(s); *(s32*)(s+0x50)=1; }
+void* func_0016B180(void* self, u32 a1, u32 a2, void* a3, void* a4) { func_00169C90(self, a1, a2); *(void**)((u8*)self + 0x20) = a3; *(void**)((u8*)self + 0x1C) = D_00355CF0; *(void**)((u8*)self + 0x24) = a4; *(u32*)((u8*)self + 0x8) = 6; return self; }
+Big* func_0016B5E8(Big* self, u32 a1, u32 a2) { func_00169C90(self, a1, a2); self->f1C = &D_00355CC8; self->f8 = 7; self->f160 = (char*)self + 0x70; return self; }
+Foo* func_0016BF10(Foo* self, u32 a1, u32 a2, void* a3) { func_00169C90(self, a1, a2); self->f1C = &D_00355CA0; self->f8 = 8; *(void**)((char*)self + 0x20) = a3; return self; }
+void func_0016BF60(u8* s) { func_00169E28(s); func_001679E0(*(u8**)s, 49.0f); u8* p = *(u8**)(s+0x20); u8* q = *(u8**)s; *(f32*)(q+0x11C) = *(f32*)(p+0x1CC); }

@@ -86,7 +86,10 @@ def run():
                 continue
             status = {"EXACT": "match", "DIFFER": "differs"}.get(r["status"], "error")
             rows[name] = (names[name], status, r.get("note", ""))
-    text = HEADER + "\n" + "".join("%s\t%s\t%s\t%s\n" % (n, *rows[n]) for n in sorted(rows))
+    text = HEADER + "\n" + "".join(
+        "%s\t%s\t%s%s\n" % (n, rows[n][0], rows[n][1], ("\t" + rows[n][2]) if rows[n][2] else "")
+        for n in sorted(rows)
+    )
     STATUS.write_text(text)
     counts = {}
     for _, status, _ in rows.values():

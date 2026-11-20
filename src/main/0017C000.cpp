@@ -1,11 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
-
 s32 func_0017CBB0();
 s32 func_0017CC20();
 s32 func_0017CC88();
 void func_0017D028(s32,s32);
-s32 func_0017D820(s32, s32);
 s32 func_001F4A80(s32);
 void func_0017DA50(s32,s32);
 void func_0017E608(s32,s32);
@@ -29,6 +27,27 @@ extern s32 D_004D2D60;
 extern s32 D_004D2E38;
 extern s32 D_004D2F10;
 
+extern u8 D_00321720[];
+extern f32 func_0025E1F0(s32, u8*);
+extern f32 func_002A4188(f32, f32);
+extern void func_00271448(u8*, u8*, u8*, u8*);
+extern void func_00271448(u8*, u8*, s32, s32, s32);
+extern void func_00271448(u8*, u8*, s32);
+extern void func_00271448(u8*, u8*, u8*, u8*, s32);
+extern void func_00271448(u8*, u8*, s32, s32);
+extern void func_002717E0(u8*, u8*);
+extern void* D_0047A3E8;
+extern u8 D_00468D30[];
+extern u8 D_00321718[];
+extern void* func_0025E5E8(s32, u8*);
+extern void func_00271448(u8*, u8*, void*);
+extern void func_00252E40(void*,s32);
+extern void func_00238970(void*);
+extern void func_0017D7D0();
+void func_0017F980(u8* s);
+void func_0017D820(s32 p0, s32 p1);
+void func_0017C8A8(u8* a0);
+void func_0017C848(u8* a0);
 void func_0017C9B0(void) {
 
 }
@@ -296,3 +315,9 @@ void func_0017FFD0(s32 arg0, s32 arg1) {
         }
     }
 }
+
+
+void func_0017C848(u8* a0) { void* v = D_0047A3E8; if (v) { void* r = func_0025E5E8(*(s32*)((u8*)v + 0x124), D_00468D30); u8 buf[0x20]; func_00271448(buf, D_00321718, r); func_002717E0(a0, buf); } }
+void func_0017C8A8(u8* a0) { void* v = D_0047A3E8; if (v) { f32 f = func_0025E1F0(*(s32*)((u8*)v + 0x124), D_00468D30); s32 n1 = (s32)(f * 0.00027777778450399637f); f32 g = func_002A4188(f, 3600.0f); s32 n2 = (s32)(g * 0.01666666753590107f); u8 buf[0x20]; func_00271448(buf, D_00321720, n1, n2); func_002717E0(a0, buf); } }
+void func_0017D820(s32 p0, s32 p1) { *(s32*)((u8*)(p0) + 0x60) = p1; func_0017D7D0(); }
+void func_0017F980(u8* s) { func_00238970(s); func_00252E40(*(void**)(s+0x10), 0x3C); *(s32*)(s+0x30) = -1; }

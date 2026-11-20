@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
-
 s32 func_0011B0C0(s32 *, s32);
 extern s32 D_00479994;
 s32 func_00138F78(s32, s32);
@@ -35,6 +34,21 @@ extern s32 D_004D2D60;
 extern s32 D_004D2E38;
 extern s32 D_004D2F10;
 
+struct Node_BA8 { u8 p0[0x4]; s32 f4; s32 f8; s32 fC; u8 p10[0x28 - 0x10]; Node_BA8* f28; };
+struct Self_BA8 { u8 p0[0x34]; Node_BA8* f34; };
+extern void func_0028EE98(s32 a0, s32 a1);
+extern void func_001D2818(void* self);
+extern void func_0013B078(u8* self);
+extern s32 func_00139A40(s32);
+extern void func_0023AE08(void*);
+extern void func_0013CD10(void*,void*);
+extern void func_0023C580(void*);
+void func_00139510(u8* a, s32 v);
+void func_00139260(u8* self);
+void func_0013AFA8(u8* self, s32 arg);
+void func_00138BA8(Self_BA8* self, s32 val);
+void func_00139228(u8* s);
+void func_00139A98(u8* s, s32 v);
 s32 func_00138AC8(s32 arg0) {
     return func_0011B0C0(&D_00479994, arg0) == 0;
 }
@@ -234,3 +248,11 @@ void func_0013BEF8(s32 arg0, s32 arg1) {
         }
     }
 }
+
+
+void func_00138BA8(Self_BA8* self, s32 val) { Node_BA8* n = self->f34; if (n == 0) return; n->fC = val; for (;;) { func_0028EE98(n->f4, n->f8); n = n->f28; if (n == 0) break; n->fC = val; } }
+void func_00139228(u8* s) { func_0023AE08(s); s64 v = *(s64*)(s+0x128); *(s64*)(s+0x128) = v | 4; }
+void func_00139260(u8* self) { func_0023C580(self); if ((*(s32*)(self+0xD8))) func_0013CD10(&D_00475480, self); }
+void func_00139510(u8* a, s32 v) { u32 n = *(u32*)(a+0x130); if (n < 0x4) { *(s32*)(a + (n<<2) + 0x134) = v; *(u32*)(a+0x130) = n + 1; } }
+void func_00139A98(u8* s, s32 v) { s32 r = func_00139A40(v); *(s32*)(s+0x40) = r; }
+void func_0013AFA8(u8* self, s32 arg) { func_0013B078(self); if (arg & 1) func_001D2818(self); }

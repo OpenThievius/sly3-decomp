@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
-
+s32 func_00271B20(s32, s32);
 void func_002719C8(s32,s32);
 void func_00271CE0(s32,s32);
 void func_002738C0(s32,s32);
@@ -8,7 +8,6 @@ s32 func_0011AF60(s32 *, s32);
 s32 func_001C85E8();
 extern s32 D_00479370;
 s32 func_002718D8(s32);
-s32 func_00271B20(s32, s32);
 s32 func_0013B500(s32, s32);
 s32 func_0025CDD0(s32, void *);
 s32 func_0011E100(s32 *, s32, s32, s32);
@@ -26,6 +25,21 @@ extern s32 D_004D2E38;
 extern s32 D_004D2F10;
 s32 func_00147E08(s32, s32, s32, void *, s32, s32, s32, void *);
 
+struct S_00271C10 { s32 f0; s32 f4; s32 f8; };
+extern void func_002936C0(u8* a0);
+struct B_271B20 { u8 pad[4]; s32 x4; s32 x8; u8 pad2[0xC]; };
+typedef struct S { u32 f0; void* f4; void* f8; } S;
+typedef struct B { char p[0xD8]; u32 fD8; char q[4]; void* fE0; } B;
+extern void func_00292034(void*, s32, s32);
+extern void func_002936A0(u8*);
+extern void func_001D2898(void* dst, void* src, u32 n);
+extern int func_002715F8(char* s);
+extern int func_00271700(u16* s);
+char* func_00271670(char* dst, char* src) ;
+u16* func_00271780(u16* dst, u16* src) ;
+void* func_00271628(void* a0, char* a1) ;
+void* func_00271730(void* a0, u16* a1) ;
+void func_00271C10(S_00271C10* a0);
 s32 func_00271928(s32 value)
 {
     s32 result = 0;
@@ -198,3 +212,10 @@ void func_00273CC0(s32 arg0) {
     func_001C85E8();
     func_0011AF60(&D_00479370, arg0);
 }
+
+
+void* func_00271628(void* a0, char* a1) { int n = func_002715F8(a1) + 1; func_001D2898(a0, a1, n); return a0; }
+char* func_00271670(char* dst, char* src) { int n1 = func_002715F8(dst); int n2 = func_002715F8(src); func_001D2898(dst + n1, src, n2 + 1); return dst; }
+void* func_00271730(void* a0, u16* a1) { int n = (func_00271700(a1) + 1) * 2; func_001D2898(a0, a1, n); return a0; }
+u16* func_00271780(u16* dst, u16* src) { int n1 = func_00271700(dst); int n2 = func_00271700(src); func_001D2898((char*)dst + n1 * 2, src, (n2 + 1) * 2); return dst; }
+void func_00271C10(S_00271C10* a0) { if (--a0->f0 == 0) { a0->f4 = -1; func_002936C0((u8*)a0->f8); } }

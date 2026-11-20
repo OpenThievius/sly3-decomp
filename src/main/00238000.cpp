@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
-
 s32 func_002380B8(s32, s32);
 s32 func_002383A0(s32, s32);
 s32 func_00238AE8(s32);
@@ -17,6 +16,22 @@ s32 func_0013B500(void *, s32);
 extern s32 D_00479A48;
 s32 func_0023B3A8();
 
+extern void func_001C7340();
+extern void func_00239808(s32, s32, s32, s32, s32, s32);
+extern void func_002BAA50(void*, s32);
+extern void func_002BBF40(void*, s32);
+extern void func_0013BDE0(void*);
+extern void func_0011E1F0(void*, void*);
+extern u8 D_00479A14[];
+extern void func_001C9118(void*, s32);
+extern s32 func_0023C580(u8*);
+void func_00238CA0(u8* a) ;
+void func_00239BC0(u8* self) ;
+s32 func_002399C8(s32 p0, s32 p1, s32 p2, s32 p3);
+void func_002397E8(s32 p0, s32 p1, s32 p2, s32 p3, s32 p4);
+s32 func_0023B5F8(u8* a);
+s32 func_002399F0(s32 p0, s32 p1, s32 p2, s32 p3, s32 p4);
+s32 func_00238FC8(s32 p0);
 void func_002381F0(void) {
     func_002380B8(1, 0xFFFF);
 }
@@ -173,3 +188,12 @@ s32 func_0023B610(void* p)
     u64 v = *(u64*)((char*)p + 0xC0);
     return (s32)(v >> 34) & 1;
 }
+
+
+void func_00238CA0(u8* a) { (void)func_0023C580(a); u8* s = a; func_001C9118(s, 1); u32 p = *(u32*)(s+0x3C); if (!(p & 1)) *(u32*)p |= 2; else *(u32*)(s+0x3C) = p | 2; *(s64*)(s+0x128) &= -9; }
+s32 func_00238FC8(s32 p0) { func_001C7340(); *(s32*)((u8*)(p0) + 0x3C) = (*(s32*)((u8*)(p0) + 0x3C) | 0x80); return (*(s32*)((u8*)(p0) + 0x3C) | 0x80); }
+void func_002397E8(s32 p0, s32 p1, s32 p2, s32 p3, s32 p4) { func_00239808(p0, p1, p2, p3, 0x4, p4); }
+s32 func_002399C8(s32 p0, s32 p1, s32 p2, s32 p3) { s32 ret; func_00239808(p0, p1, p2, p3, 4, (s32)&ret); return ret; }
+s32 func_002399F0(s32 p0, s32 p1, s32 p2, s32 p3, s32 p4) { s32 ret; func_00239808(p0, p1, p2, p3, p4, (s32)&ret); return ret; }
+void func_00239BC0(u8* self) { s32 v = *(s32*)(self + 0x10) - 1; *(s32*)(self + 0x10) = v; if (v > 0) return; func_002BAA50(self, 0); func_002BBF40(self + 4, 0); func_0013BDE0(self); func_0011E1F0(D_00479A14, self); }
+s32 func_0023B5F8(u8* a) { s64 v = *(u64*)((u8*)a + 0x120); s64 r = (v << 8) >> 60; return (s32)r; }

@@ -75,6 +75,7 @@ class Resolver:
         self.key = key
         self.functions = load_functions("us")
         self.symbols = load_symbols("us")
+        self.other_symbols = load_symbols(key) if key != "us" else {}
         self.translation = translation(key) if key != "us" else None
 
     def us_address(self, sym):
@@ -96,7 +97,16 @@ class Resolver:
         a = self.us_address(sym)
         if a is None or self.translation is None:
             return a
-        return self.translation.get(a)
+        t = self.translation.get(a)
+        if t is not None:
+            return t
+        # Absolute addresses below the executable are the same in every version:
+        # a symbol named in both symbol_addrs.txt files resolves to itself.
+        b = base_name(sym)
+        for n in (sym, b):
+            if n in self.other_symbols and self.other_symbols[n] == a:
+                return a
+        return None
 
 
 def translation(key):
